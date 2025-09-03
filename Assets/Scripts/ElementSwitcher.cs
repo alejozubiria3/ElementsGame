@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public enum Element { Fire, Water }
 
@@ -8,13 +9,18 @@ public class ElementSwitcher : MonoBehaviour
     [Header("Estado actual")]
     public Element current = Element.Fire;
 
-    [Header("Referencias visuales")]
+    [Header("Referencias visuales en el Player")]
     public Renderer targetRenderer;   
     public Light targetLight;         
 
     [Header("Colores")]
     public Color fireColor = new Color(1f, 0.3f, 0.1f); 
-    public Color waterColor = Color.cyan;                
+    public Color waterColor = Color.cyan;               
+
+    [Header("UI de Elemento")]
+    public Image elementIcon;    
+    public Sprite fireSprite;    
+    public Sprite waterSprite;   
 
     [Header("Flash de feedback")]
     public float flashDuration = 0.18f;
@@ -26,7 +32,7 @@ public class ElementSwitcher : MonoBehaviour
 
     void Awake()
     {
-        
+       
         if (!targetRenderer) targetRenderer = GetComponentInChildren<Renderer>();
         if (targetRenderer) _matInstance = targetRenderer.material;
 
@@ -54,12 +60,12 @@ public class ElementSwitcher : MonoBehaviour
 
     void ApplyVisuals()
     {
+        
         if (_matInstance)
         {
             _baseColor = (current == Element.Fire) ? fireColor : waterColor;
             _matInstance.color = _baseColor;
 
-            
             _matInstance.EnableKeyword("_EMISSION");
             _matInstance.SetColor("_EmissionColor", _baseColor * 0f);
         }
@@ -67,6 +73,12 @@ public class ElementSwitcher : MonoBehaviour
         if (targetLight)
         {
             targetLight.color = _baseColor;
+        }
+
+        
+        if (elementIcon != null)
+        {
+            elementIcon.sprite = (current == Element.Fire) ? fireSprite : waterSprite;
         }
     }
 
@@ -84,7 +96,7 @@ public class ElementSwitcher : MonoBehaviour
             yield return null;
         }
 
-        
+       
         if (_matInstance)
             _matInstance.SetColor("_EmissionColor", _baseColor * 0f);
     }

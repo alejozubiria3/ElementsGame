@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\assets\\scripts\\elementswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\elementsgame\\assets\\scripts\\elementswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\elementswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\elementsgame\\assets\\cameratopdownfollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\assets\\cameratopdownfollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|solutionrelative:assets\\cameratopdownfollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\ElementSwitcher.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\Assets\\Scripts\\ElementSwitcher.cs",
               "RelativeToolTip": "Assets\\Scripts\\ElementSwitcher.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwBAAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAAEAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-03T18:48:38.313Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Assets\\CameraTopDownFollow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-02T17:03:29.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-02T17:03:29.314Z"
             },
             {
               "$type": "Document",
