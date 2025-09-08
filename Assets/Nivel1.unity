@@ -640,7 +640,7 @@ GameObject:
   - component: {fileID: 194871865}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2296,6 +2296,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2b23f81aa66f06646b3c862eed77e0d3, type: 3}
   m_PrefabInstance: {fileID: 1031063503}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1065246439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1065246440}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1065246440
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065246439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.48}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1231775835}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1176782421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2376,6 +2407,7 @@ GameObject:
   - component: {fileID: 1231775836}
   - component: {fileID: 1231775837}
   - component: {fileID: 1231775838}
+  - component: {fileID: 1231775839}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2471,7 +2503,8 @@ Transform:
   m_LocalPosition: {x: 28, y: 1.02, z: 57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1065246440}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &1231775836
@@ -2559,6 +2592,27 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1231775839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231775831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc2a3eee4b245a4eadfe0c0737137ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireballPrefab: {fileID: 9097085367680139180, guid: 027a69a3d61ccb246b77d1bdd9b0a2b4, type: 3}
+  speed: 10
+  lifetime: 4
+  cooldown: 0.35
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1
+  aimPlaneY: 0
+  lockYDirection: 1
 --- !u!1001 &1244465476
 PrefabInstance:
   m_ObjectHideFlags: 0
