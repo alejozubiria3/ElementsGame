@@ -4,6 +4,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class FireballProjectile : MonoBehaviour
 {
+    [Header("Da�o")]
+    [SerializeField] private float damage = 20f;
+
+    [Header("Visual/Debug")]
     [SerializeField] private Color fireColor = new Color(1f, 0.3f, 0.1f);
 
     private Rigidbody _rb;
@@ -14,30 +18,54 @@ public class FireballProjectile : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody>();
         _myCol = GetComponent<Collider>();
+
+        
         _rb.useGravity = false;
         _rb.interpolation = RigidbodyInterpolation.Interpolate;
         _rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+
+        
         _myCol.isTrigger = true;
 
+        
         var rend = GetComponentInChildren<Renderer>();
         if (rend) rend.material.color = fireColor;
     }
 
+    
     public void Launch(Vector3 dir, float speed, float lifetime, GameObject instigator)
     {
         _instigator = instigator;
 
         
-        foreach (var c in _instigator.GetComponentsInChildren<Collider>())
+        var cols = _instigator.GetComponentsInChildren<Collider>();
+        foreach (var c in cols)
             Physics.IgnoreCollision(_myCol, c, true);
 
-        _rb.linearVelocity = dir * speed;
-        Destroy(gameObject, lifetime);
+        _rb.linearVelocity = dir.normalized * speed;
+        Destroy(gameObject, lifetime); 
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform.root == _instigator.transform) return; // por si acaso
+        
+        if (other.transform.root == _instigator.transform) return;
+
+        
+        if (other.TryGetComponent<DummyHealth>(out var health))
+        {
+            
+            health.TakeDamage(damage);
+
+           
+            var burn = other.gameObject.AddComponent<BurnEffect>();
+            burn.tickDamage = 5f; 
+            burn.tickInterval = 1f; 
+            burn.duration = 3f; 
+            burn.StartBurn();
+        }
+
+        
         Destroy(gameObject);
     }
 }

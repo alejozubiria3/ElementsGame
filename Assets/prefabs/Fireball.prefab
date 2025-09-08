@@ -203,5 +203,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f9a32eb3c5cb54c8fd4cb64cb41f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireColor: {r: 1, g: 0.3, b: 0.1, a: 1}
-  logHits: 1
+  fireColor: {r: 1, g: 0.4273502, b: 0, a: 1}
