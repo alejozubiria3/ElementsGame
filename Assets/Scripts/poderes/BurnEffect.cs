@@ -7,30 +7,34 @@ public class BurnEffect : MonoBehaviour
     public float tickInterval = 1f;
     public float duration = 3f;
 
-    private DummyHealth health;
+    EnemyHealth _enemy;
+    Coroutine _routine;
 
     void Awake()
     {
-        health = GetComponent<DummyHealth>();
+        _enemy = GetComponent<EnemyHealth>();
     }
 
     public void StartBurn()
     {
-        StartCoroutine(BurnCoroutine());
+        if (_enemy == null || _enemy.isDead) { Destroy(this); return; }
+        if (_routine != null) StopCoroutine(_routine);
+        _routine = StartCoroutine(Run());
     }
 
-    private IEnumerator BurnCoroutine()
+    IEnumerator Run()
     {
-        float elapsed = 0f;
-        while (elapsed < duration)
+        _enemy.ApplyBurnVisual(true);
+        float t = 0f;
+        while (t < duration && _enemy != null && !_enemy.isDead)
         {
-            if (health != null)
-            {
-                health.TakeDamage(tickDamage, true); 
-            }
+            _enemy.TakeDamage(tickDamage, true);
             yield return new WaitForSeconds(tickInterval);
-            elapsed += tickInterval;
+            t += tickInterval;
         }
+        if (_enemy != null && !_enemy.isDead)
+            _enemy.ApplyBurnVisual(false);
         Destroy(this);
     }
 }
+

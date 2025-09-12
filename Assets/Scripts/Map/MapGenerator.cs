@@ -15,7 +15,7 @@ public class MapGenerator : MonoBehaviour
     public int seed = 0;
     public bool useRandomSeed = true;
 
-    // Matriz para guardar qué índice de prefab se colocó en cada celda
+    
     private int[,] gridPrefabIndex;
 
     void Start()
@@ -36,7 +36,7 @@ public class MapGenerator : MonoBehaviour
                 Vector3 pos = new Vector3(x * cellSize, 0, z * cellSize);
                 int index = GetRandomPrefabIndex(x, z);
 
-                // Guardamos qué prefab salió en esta celda
+                // Guardamos quï¿½ prefab saliï¿½ en esta celda
                 gridPrefabIndex[x, z] = index;
 
                 GameObject obj = Instantiate(prefabs[index], pos, Quaternion.identity);
