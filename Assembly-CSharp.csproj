@@ -65,7 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\poderes\FireballShooter.cs" />
-    <Compile Include="Assets\EnemyHealth.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\poderes\FireballProjectile.cs" />
     <Compile Include="Assets\Scripts\enemigos\DummyHealth.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\poderes\BurnEffect.cs" />
     <Compile Include="Assets\Scripts\ElementSwitcher.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\MiniMapFollow.cs" />
     <Compile Include="Assets\Scripts\Map\MapGenerator.cs" />
   </ItemGroup>

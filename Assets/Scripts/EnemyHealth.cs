@@ -14,14 +14,14 @@ public class EnemyHealth : MonoBehaviour
     public Color hitColor = Color.red;                 
     public Color burnColor = new Color(1f, 0.4f, 0f);  
     public float flashTime = 0.12f;                    
-    
-    MaterialPropertyBlock _mpb;
-    
-    static readonly int _BaseColor = Shader.PropertyToID("_BaseColor");
-    static readonly int _Color = Shader.PropertyToID("_Color");
-    static readonly int _EmissionColor = Shader.PropertyToID("_EmissionColor");
 
-    bool _isBurning;
+    
+    private MaterialPropertyBlock _mpb;
+    private static readonly int BaseColorID     = Shader.PropertyToID("_BaseColor"); 
+    private static readonly int ColorID         = Shader.PropertyToID("_Color");     
+    private static readonly int EmissionColorID = Shader.PropertyToID("_EmissionColor");
+
+    private bool _isBurning;
 
     void Awake()
     {
@@ -32,7 +32,8 @@ public class EnemyHealth : MonoBehaviour
             renderersToColor = GetComponentsInChildren<Renderer>(true);
 
         _mpb = new MaterialPropertyBlock();
-        ClearTint(); 
+        ClearTint();
+    }
 
     public void TakeDamage(float amount, bool isDot = false)
     {
@@ -48,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             
-            if (!_isBurning) 
+            if (!_isBurning)
                 StartCoroutine(FlashHit());
         }
 
@@ -56,33 +57,32 @@ public class EnemyHealth : MonoBehaviour
             Die();
     }
 
-    IEnumerator FlashHit()
+    private IEnumerator FlashHit()
     {
-        SetTint(hitColor, emission: 0.0f); 
+        SetTint(hitColor, 0f);
         yield return new WaitForSeconds(flashTime);
-        
         if (!_isBurning) ClearTint();
-        else SetTint(burnColor, emission: 0.0f);
+        else SetTint(burnColor, 0f);
     }
 
     public void ApplyBurnVisual(bool on)
     {
         _isBurning = on;
-        if (on) SetTint(burnColor, emission: 0.0f);
+        if (on) SetTint(burnColor, 0f);
         else    ClearTint();
     }
 
-    void SetTint(Color c, float emission = 0.0f)
+    private void SetTint(Color c, float emissionFactor)
     {
         if (renderersToColor == null) return;
         foreach (var r in renderersToColor)
         {
             if (!r) continue;
             r.GetPropertyBlock(_mpb);
-            _mpb.SetColor(_BaseColor, c); 
-            _mpb.SetColor(_Color, c);     
-            if (emission > 0f)
-                _mpb.SetColor(_EmissionColor, c * emission);
+            _mpb.SetColor(BaseColorID, c); 
+            _mpb.SetColor(ColorID, c);     
+            if (emissionFactor > 0f)
+                _mpb.SetColor(EmissionColorID, c * emissionFactor);
             r.SetPropertyBlock(_mpb);
         }
     }
@@ -97,7 +97,7 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    void Die()
+    private void Die()
     {
         if (isDead) return;
         isDead = true;
