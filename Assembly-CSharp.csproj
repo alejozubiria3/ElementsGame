@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\MiniMapFollow.cs" />
     <Compile Include="Assets\Scripts\Map\MapGenerator.cs" />
+    <Compile Include="Assets\Scripts\poderes\WaterShield.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

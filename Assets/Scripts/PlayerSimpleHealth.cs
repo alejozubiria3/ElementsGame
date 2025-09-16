@@ -7,6 +7,8 @@ public class PlayerSimpleHealth : MonoBehaviour
     [Tooltip("Solo lectura en runtime")]
     public int currentHealth;
 
+    [Header("Estado")]
+    public bool isInvulnerable = false;   
     public bool isDead { get; private set; }
 
     void Awake()
@@ -19,6 +21,13 @@ public class PlayerSimpleHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         if (isDead) return;
+
+        
+        if (isInvulnerable)
+        {
+            Debug.Log("[PlayerSimpleHealth] Daño bloqueado por WaterShield.");
+            return;
+        }
 
         currentHealth = Mathf.Max(0, currentHealth - amount);
         Debug.Log("[PlayerSimpleHealth] TakeDamage " + amount + " -> HP: " + currentHealth);
@@ -33,18 +42,14 @@ public class PlayerSimpleHealth : MonoBehaviour
         isDead = true;
         Debug.Log("[PlayerSimpleHealth] DIE() llamado. Destruyendo Player...");
 
-        
         var cc = GetComponent<CharacterController>();
         if (cc) cc.enabled = false;
         var rb = GetComponent<Rigidbody>();
         if (rb) { rb.linearVelocity = Vector3.zero; rb.isKinematic = true; }
 
-        
-        Destroy(gameObject, 0.05f);   
-        
+        Destroy(gameObject, 0.05f);
     }
 
-    
     [ContextMenu("TEST: Kill Player")]
     void TestKill()
     {
