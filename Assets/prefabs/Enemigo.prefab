@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2918003994129627045}
   - component: {fileID: 2984898335126711456}
   - component: {fileID: 2484284104422338276}
+  - component: {fileID: 2630822441886683285}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Enemy
@@ -167,6 +168,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  renderersToFlash: []
+  renderersToColor: []
   hitColor: {r: 1, g: 0, b: 0, a: 1}
+  burnColor: {r: 1, g: 0.4, b: 0, a: 1}
   flashTime: 0.08
+--- !u!114 &2630822441886683285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413887343776905992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85668bcfe65186844a7dca05c21d8316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRenderer: {fileID: 0}
+  selectedColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
