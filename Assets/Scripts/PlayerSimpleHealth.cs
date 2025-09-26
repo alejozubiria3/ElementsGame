@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class PlayerSimpleHealth : MonoBehaviour
 {
@@ -8,21 +9,23 @@ public class PlayerSimpleHealth : MonoBehaviour
     public int currentHealth;
 
     [Header("Estado")]
-    public bool isInvulnerable = false;   
+    public bool isInvulnerable = false;
     public bool isDead { get; private set; }
+
+    public event Action<int, int> OnHealthChanged; 
 
     void Awake()
     {
         currentHealth = maxHealth;
         isDead = false;
         Debug.Log("[PlayerSimpleHealth] Awake -> HP: " + currentHealth);
+        OnHealthChanged?.Invoke(currentHealth, maxHealth); 
     }
 
     public void TakeDamage(int amount)
     {
         if (isDead) return;
 
-        
         if (isInvulnerable)
         {
             Debug.Log("[PlayerSimpleHealth] Daño bloqueado por WaterShield.");
@@ -30,10 +33,19 @@ public class PlayerSimpleHealth : MonoBehaviour
         }
 
         currentHealth = Mathf.Max(0, currentHealth - amount);
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
+
         Debug.Log("[PlayerSimpleHealth] TakeDamage " + amount + " -> HP: " + currentHealth);
 
         if (currentHealth == 0)
             Die();
+    }
+
+    public void Heal(int amount)
+    {
+        if (isDead) return;
+        currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
     }
 
     void Die()
@@ -54,6 +66,7 @@ public class PlayerSimpleHealth : MonoBehaviour
     void TestKill()
     {
         currentHealth = 0;
+        OnHealthChanged?.Invoke(currentHealth, maxHealth);
         Die();
     }
-}
+}  
