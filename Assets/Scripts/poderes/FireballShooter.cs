@@ -5,6 +5,10 @@ public class FireballShooter : MonoBehaviour
 {
     [Header("Refs")]
     [SerializeField] private GameObject fireballPrefab;
+    [SerializeField] private ManaSystem mana;
+
+    [Header("Costos")]
+    [SerializeField] private float manaCost = 15f;
 
     [Header("Shoot Params")]
     [SerializeField] private float speed = 24f;
@@ -12,8 +16,8 @@ public class FireballShooter : MonoBehaviour
     [SerializeField] private float cooldown = 0.35f;
 
     [Header("Aiming")]
-    [SerializeField] private LayerMask groundMask = ~0; 
-    [SerializeField] private float aimPlaneY = 0f;     
+    [SerializeField] private LayerMask groundMask = ~0;
+    [SerializeField] private float aimPlaneY = 0f;
     [SerializeField] private bool lockYDirection = true;
 
     private ElementSwitcher _element;
@@ -25,6 +29,10 @@ public class FireballShooter : MonoBehaviour
         _element = GetComponent<ElementSwitcher>();
         _cam = Camera.main;
         if (_cam == null) Debug.LogWarning("No hay MainCamera con tag 'MainCamera'.");
+
+        
+        if (!mana) mana = GetComponent<ManaSystem>();
+        if (!mana) Debug.LogWarning("FireballShooter: no se encontró ManaSystem. No se gastará maná.");
     }
 
     void Update()
@@ -35,8 +43,18 @@ public class FireballShooter : MonoBehaviour
         {
             if (TryGetAimPoint(out var target))
             {
-                ShootTowards(target);
-                _cd = cooldown;
+                
+                if (mana == null || mana.TrySpend(manaCost))
+                {
+                    ShootTowards(target);
+                    _cd = cooldown;
+                }
+                else
+                {
+                    
+                    Debug.Log("Sin maná para Fireball");
+                   
+                }
             }
         }
     }
@@ -80,4 +98,4 @@ public class FireballShooter : MonoBehaviour
             proj.Launch(dir, speed, lifetime, this.gameObject);
         }
     }
-}
+}  

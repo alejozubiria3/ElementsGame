@@ -3,11 +3,15 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\elementsgame\\assets\\scripts\\manasystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manasystem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\elementsgame\\assets\\scripts\\healthbarswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\healthbarswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|c:\\users\\user\\documents\\github\\elementsgame\\assets\\scripts\\playersimplehealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\assets\\scripts\\playersimplehealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C5583273-52D8-CD03-F2B2-E8D9E9B79210}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playersimplehealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -31,19 +35,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ManaSystem.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\Assets\\Scripts\\ManaSystem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ManaSystem.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\Assets\\Scripts\\ManaSystem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ManaSystem.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwDgAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T09:22:20.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "HealthBarSwitcher.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\Assets\\Scripts\\HealthBarSwitcher.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\HealthBarSwitcher.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\Assets\\Scripts\\HealthBarSwitcher.cs",
               "RelativeToolTip": "Assets\\Scripts\\HealthBarSwitcher.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAmwFUAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAuwGIAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-26T07:58:12.503Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ElementSwitcher.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\Assets\\Scripts\\ElementSwitcher.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ElementSwitcher.cs",
@@ -55,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
@@ -67,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "PlayerSimpleHealth.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ElementsGame\\Assets\\Scripts\\PlayerSimpleHealth.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerSimpleHealth.cs",
@@ -75,8 +92,7 @@
               "RelativeToolTip": "Assets\\Scripts\\PlayerSimpleHealth.cs",
               "ViewState": "AgIAAD0AAAAAAAAAAAAcwEcAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-26T07:52:52.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-26T07:52:52.038Z"
             }
           ]
         }
