@@ -5,7 +5,9 @@ public class FireballShooter : MonoBehaviour
 {
     [Header("Refs")]
     [SerializeField] private GameObject fireballPrefab;
-    [SerializeField] private ManaSystem mana;   
+    [SerializeField] private ManaSystem mana;
+    [Tooltip("Punto de spawn de la bola de fuego (vacío en la mano, frente del player, etc.)")]
+    [SerializeField] private Transform spawnPoint;
 
     [Header("Costos")]
     [SerializeField] private float manaCost = 15f;
@@ -23,7 +25,10 @@ public class FireballShooter : MonoBehaviour
     {
         _element = GetComponent<ElementSwitcher>();
         _selector = GetComponent<TargetSelector>();
-        if (!mana) mana = GetComponent<ManaSystem>(); 
+        if (!mana) mana = GetComponent<ManaSystem>();
+
+        if (!spawnPoint)
+            Debug.LogWarning("[FireballShooter] No asignaste spawnPoint, se usará la posición del Player.");
     }
 
     void Update()
@@ -33,16 +38,18 @@ public class FireballShooter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && _cd <= 0f && _element.current == Element.Fire)
         {
             var target = _selector.CurrentTarget;
+
+            
             if (target == null)
             {
-                Debug.Log("[Fireball] No hay objetivo seleccionado.");
+                Debug.Log("[Fireball] Necesitás tener un enemigo seleccionado para disparar.");
                 return;
             }
 
-            // gastar man� ANTES de disparar
+            
             if (mana != null && !mana.TrySpend(manaCost))
             {
-                Debug.Log("[Fireball] Man� insuficiente. Requiere " + manaCost);
+                Debug.Log("[Fireball] Maná insuficiente. Requiere " + manaCost);
                 return;
             }
 
@@ -53,13 +60,15 @@ public class FireballShooter : MonoBehaviour
 
     void ShootAt(Transform target)
     {
-        Vector3 origin = transform.position + Vector3.up * 1.2f;
-        Vector3 dir = (target.position - origin);
-        dir.y = 0f;
-        dir.Normalize();
+        
+        Vector3 origin = spawnPoint ? spawnPoint.position : transform.position + Vector3.up * 1.2f;
 
-        var go = Instantiate(fireballPrefab, origin + dir * 0.8f, Quaternion.LookRotation(dir));
+        
+        Vector3 dir = (target.position - origin).normalized;
+
+        var go = Instantiate(fireballPrefab, origin, Quaternion.LookRotation(dir, Vector3.up));
+
         if (go.TryGetComponent<FireballProjectile>(out var proj))
             proj.Launch(dir, speed, lifetime, this.gameObject);
     }
-}  
+}

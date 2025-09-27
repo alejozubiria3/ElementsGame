@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class TargetSelector : MonoBehaviour
 {
-    [Header("Selecci�n")]
+    [Header("Selección")]
     public KeyCode selectKey = KeyCode.Mouse1; 
     public LayerMask enemyMask = ~0;  
     public float rayMaxDistance = 200f;
+
+    [Header("Rotación al seleccionar")]
+    public bool rotateOnSelect = true;   
+    public float rotateSpeed = 12f;      
 
     public Targetable CurrentTarget { get; private set; }
 
@@ -20,6 +24,19 @@ public class TargetSelector : MonoBehaviour
     {
         if (Input.GetKeyDown(selectKey))
             TryPickTarget();
+
+        
+        if (rotateOnSelect && CurrentTarget != null)
+        {
+            Vector3 toTarget = CurrentTarget.transform.position - transform.position;
+            toTarget.y = 0f; 
+
+            if (toTarget.sqrMagnitude > 0.001f)
+            {
+                Quaternion lookRot = Quaternion.LookRotation(toTarget);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, rotateSpeed * Time.deltaTime);
+            }
+        }
     }
 
     void TryPickTarget()
@@ -46,6 +63,17 @@ public class TargetSelector : MonoBehaviour
 
         CurrentTarget = t;
         CurrentTarget.SetSelected(true);
+
+        
+        if (rotateOnSelect && CurrentTarget != null)
+        {
+            Vector3 toTarget = CurrentTarget.transform.position - transform.position;
+            toTarget.y = 0f;
+            if (toTarget.sqrMagnitude > 0.001f)
+            {
+                transform.rotation = Quaternion.LookRotation(toTarget);
+            }
+        }
     }
 
     public void ClearTarget()
@@ -53,4 +81,4 @@ public class TargetSelector : MonoBehaviour
         if (CurrentTarget) CurrentTarget.SetSelected(false);
         CurrentTarget = null;
     }
-} 
+}
