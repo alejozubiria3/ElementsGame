@@ -38,9 +38,8 @@ public class EnemyRanged : MonoBehaviour
     public bool requireLineOfSight = true;
 
     [Tooltip("Capas que bloquean la visión (paredes, etc.)")]
-    public LayerMask losMask = ~0; // por defecto, todo
-
-    // Runtime
+    public LayerMask losMask = ~0; 
+    
     private Transform player;
     private bool isChasing;
     private Rigidbody rb;
@@ -48,10 +47,10 @@ public class EnemyRanged : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        rb.isKinematic = true;      // igual que tu melee
+        rb.isKinematic = true;      
         rb.detectCollisions = true;
 
-        // Sanidad: no permitir attackRange > stopDistance
+        
         if (attackRange > stopDistance)
             attackRange = stopDistance;
     }
@@ -64,21 +63,21 @@ public class EnemyRanged : MonoBehaviour
         toPlayer.y = 0f;
         float dist = toPlayer.magnitude;
 
-        // Rotar suavemente hacia el jugador
+       
         if (dist > 0.001f)
         {
             Quaternion look = Quaternion.LookRotation(toPlayer);
             transform.rotation = Quaternion.Slerp(transform.rotation, look, 12f * Time.deltaTime);
         }
 
-        // Avanzar hasta llegar a stopDistance (con tolerancia)
+        
         if (dist > stopDistance + stopTolerance)
         {
             Vector3 dir = toPlayer.normalized;
             transform.position += dir * speed * Time.deltaTime;
         }
 
-        // Disparar si está a rango y pasó el cooldown
+       
         if (dist <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
             if (!requireLineOfSight || HasLineOfSight())
@@ -96,7 +95,7 @@ public class EnemyRanged : MonoBehaviour
         Vector3 dir = (target - origin).normalized;
         float dist = Vector3.Distance(origin, target);
 
-        // Si golpea algo antes que al Player y ese algo NO es el Player → bloqueado
+       
         if (Physics.Raycast(origin, dir, out RaycastHit hit, dist, losMask, QueryTriggerInteraction.Ignore))
         {
             if (!hit.collider.CompareTag("Player"))
@@ -109,17 +108,17 @@ public class EnemyRanged : MonoBehaviour
     {
         if (!flechaPrefab) return;
 
-        // Origen y dirección hacia el centro del player
+        
         Vector3 origin = shootPoint ? shootPoint.position : transform.position + Vector3.up * 1.2f;
         Vector3 target = player.position + Vector3.up * 1.0f;
         Vector3 dir = (target - origin).normalized;
 
-        // Instanciar flecha y configurarla
+       
         Flecha flecha = Instantiate(flechaPrefab, origin, Quaternion.LookRotation(dir));
         flecha.Init(dir * projectileSpeed, damage);
     }
 
-    // Detección como tu melee (trigger)
+    
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -138,7 +137,7 @@ public class EnemyRanged : MonoBehaviour
         }
     }
 
-    // Gizmos de ayuda
+    
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan; Gizmos.DrawWireSphere(transform.position, stopDistance);
