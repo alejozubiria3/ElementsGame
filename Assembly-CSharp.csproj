@@ -63,9 +63,11 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ManaSystem.cs" />
     <Compile Include="Assets\Scripts\poderes\FireballShooter.cs" />
+    <Compile Include="Assets\flecha.cs" />
     <Compile Include="Assets\Scripts\TargetSelector.cs" />
     <Compile Include="Assets\Scripts\HealthBarSwitcher.cs" />
     <Compile Include="Assets\Scripts\ManaBarUI.cs" />
+    <Compile Include="Assets\EnemyRanged.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\poderes\FireballProjectile.cs" />
     <Compile Include="Assets\Scripts\enemigos\Targetable.cs" />
