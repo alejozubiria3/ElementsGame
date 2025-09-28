@@ -4,20 +4,30 @@ using UnityEngine;
 public class WaterShield : MonoBehaviour
 {
     [Header("Referencias")]
-    [SerializeField] private GameObject shieldSphere;  
+    [SerializeField] private GameObject shieldSphere;
     [SerializeField] private PlayerSimpleHealth playerHealth;
-    [SerializeField] private ManaSystem mana;   
+    [SerializeField] private ManaSystem mana;
 
     [Header("Costos")]
-    [SerializeField] private float manaCost = 20f;  
+    [SerializeField] private float manaCost = 20f;
 
     [Header("Timing")]
-    [SerializeField] private float duration = 3f; 
+    [SerializeField] private float duration = 3f;
     [SerializeField] private float cooldown = 8f;
+
+    // ---- GETTERS para la UI ----
+    public bool IsActive => _active;
+    public float ActiveTotal => duration;
+    public float ActiveRemaining => _active ? Mathf.Max(0f, _activeEndTime - Time.time) : 0f;
+
+    public float CooldownRemaining => Mathf.Max(0f, _cdTimer);
+    public float CooldownTotal => cooldown;
+    public float Cooldown01 => (cooldown <= 0f) ? 0f : Mathf.Clamp01(_cdTimer / cooldown);
 
     private ElementSwitcher _element;
     private float _cdTimer;
     private bool _active;
+    private float _activeEndTime; 
 
     void Awake()
     {
@@ -78,6 +88,8 @@ public class WaterShield : MonoBehaviour
         _active = true;
         _cdTimer = cooldown;
 
+        _activeEndTime = Time.time + duration;
+
         CancelInvoke(nameof(Deactivate));
         Invoke(nameof(Deactivate), duration);
 
@@ -90,7 +102,9 @@ public class WaterShield : MonoBehaviour
         if (playerHealth) playerHealth.isInvulnerable = false;
 
         _active = false;
+        _activeEndTime = 0f; // limpia
+
         CancelInvoke(nameof(Deactivate));
         Debug.Log("[WaterShield] DESACTIVADO");
     }
-}  
+}    
