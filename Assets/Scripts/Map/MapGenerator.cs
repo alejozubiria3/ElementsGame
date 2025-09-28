@@ -55,18 +55,18 @@ public class MapGenerator : MonoBehaviour
             index = Random.Range(0, prefabs.Count);
             tries++;
 
-            // evita repetir con el de la izquierda
+            
             if (x > 0 && gridPrefabIndex[x - 1, z] == index) continue;
 
-            // evita repetir con el de arriba
+            
             if (z > 0 && gridPrefabIndex[x, z - 1] == index) continue;
 
-            // si no repite, lo devolvemos
+            
             return index;
 
         } while (tries < 10);
 
-        // si no encuentra diferente (caso extremo), devuelve lo que haya
+        
         return index;
     }
 }
