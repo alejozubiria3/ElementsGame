@@ -28925,15 +28925,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf25f4848c1abb44bb7f1dfa34607703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimap: {fileID: 0}
-  minimapCamera: {fileID: 0}
-  enemyMarkerPrefab: {fileID: 0}
+  minimap: {fileID: 940591817}
+  minimapCamera: {fileID: 1971852866}
+  enemyMarkerPrefab: {fileID: 729400699}
   markersParent: {fileID: 0}
-  enemyTag: Enemy
-  scanInterval: 0.5
-  clampToEdge: 1
+  clampToEdge: 0
   edgePadding: 6
-  showOnlyWhenVisible: 0
+  showOnlyWhenVisible: 1
 --- !u!114 &729400701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29470,8 +29468,8 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1158814696}
   - {fileID: 729400699}
+  - {fileID: 1158814696}
   m_Father: {fileID: 243214414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}

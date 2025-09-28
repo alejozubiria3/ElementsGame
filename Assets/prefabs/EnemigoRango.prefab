@@ -103,7 +103,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71e8e780676170e4d867353dac94e198, type: 2}
+  - {fileID: 2100000, guid: 46304d066a82a80448f8538496ef1b64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -265,3 +265,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b2506a991e3b946ba71fbf6329f3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requiredTag: Enemy
