@@ -6,7 +6,7 @@ public class FireballShooter : MonoBehaviour
     [Header("Refs")]
     [SerializeField] private GameObject fireballPrefab;
     [SerializeField] private ManaSystem mana;
-    [Tooltip("Punto de spawn de la bola de fuego (vacío en la mano, frente del player, etc.)")]
+    [Tooltip("Punto de spawn (vacío en la mano/pecho). Si no se asigna, usa la posición del Player.")]
     [SerializeField] private Transform spawnPoint;
 
     [Header("Costos")]
@@ -15,7 +15,13 @@ public class FireballShooter : MonoBehaviour
     [Header("Disparo")]
     [SerializeField] private float speed = 24f;
     [SerializeField] private float lifetime = 4f;
-    [SerializeField] private float cooldown = 0.35f;
+    [SerializeField] private float cooldown = 2f;
+    [SerializeField] private bool lockYDirection = false;
+
+    // --- Getters para UI de cooldown ---
+    public float CooldownRemaining => Mathf.Max(0f, _cd);
+    public float CooldownTotal => cooldown;
+    public float Cooldown01 => (cooldown <= 0f) ? 0f : Mathf.Clamp01(_cd / cooldown);
 
     private ElementSwitcher _element;
     private TargetSelector _selector;
@@ -28,28 +34,33 @@ public class FireballShooter : MonoBehaviour
         if (!mana) mana = GetComponent<ManaSystem>();
 
         if (!spawnPoint)
-            Debug.LogWarning("[FireballShooter] No asignaste spawnPoint, se usará la posición del Player.");
+            Debug.LogWarning("[FireballShooter] No asignaste spawnPoint; se usará la posición del Player.");
     }
 
     void Update()
     {
         if (_cd > 0f) _cd -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Q) && _cd <= 0f && _element.current == Element.Fire)
+        if (Input.GetKeyDown(KeyCode.Q) && _element.current == Element.Fire)
         {
-            var target = _selector.CurrentTarget;
-
-            
-            if (target == null)
+            if (_cd > 0f)
             {
-                Debug.Log("[Fireball] Necesitás tener un enemigo seleccionado para disparar.");
+                
+                Debug.Log($"[Fireball] En cooldown: {CooldownRemaining:0.0}s");
                 return;
             }
 
-            
+            var target = _selector.CurrentTarget;
+            if (target == null)
+            {
+                Debug.Log("[Fireball] Necesitás tener un enemigo seleccionado.");
+                return;
+            }
+
+           
             if (mana != null && !mana.TrySpend(manaCost))
             {
-                Debug.Log("[Fireball] Maná insuficiente. Requiere " + manaCost);
+                Debug.Log($"[Fireball] Maná insuficiente. Requiere {manaCost}");
                 return;
             }
 
@@ -60,15 +71,34 @@ public class FireballShooter : MonoBehaviour
 
     void ShootAt(Transform target)
     {
-        
-        Vector3 origin = spawnPoint ? spawnPoint.position : transform.position + Vector3.up * 1.2f;
+       
+        Vector3 origin = spawnPoint ? spawnPoint.position : (transform.position + Vector3.up * 1.2f);
 
         
-        Vector3 dir = (target.position - origin).normalized;
+        Vector3 aimPoint = GetAimPoint(target);
 
+        
+        Vector3 dir = (aimPoint - origin).normalized;
+        if (lockYDirection) { dir.y = 0f; dir.Normalize(); }
+
+      
         var go = Instantiate(fireballPrefab, origin, Quaternion.LookRotation(dir, Vector3.up));
 
+        
         if (go.TryGetComponent<FireballProjectile>(out var proj))
             proj.Launch(dir, speed, lifetime, this.gameObject);
     }
-}
+
+    Vector3 GetAimPoint(Transform t)
+    {
+        
+        if (t.TryGetComponent<Renderer>(out var r))
+            return r.bounds.center;
+
+        var rend = t.GetComponentInChildren<Renderer>();
+        if (rend) return rend.bounds.center;
+
+        
+        return t.position + Vector3.up * 1.0f;
+    }
+}    

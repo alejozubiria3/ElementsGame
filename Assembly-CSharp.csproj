@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\HealthBarSwitcher.cs" />
     <Compile Include="Assets\Scripts\ManaBarUI.cs" />
     <Compile Include="Assets\Scripts\MiniMapEnemyMarkers.cs" />
+    <Compile Include="Assets\Scripts\poderes\FireballUI.cs" />
     <Compile Include="Assets\Scripts\poderes\WaterShieldActiveUI.cs" />
     <Compile Include="Assets\Scripts\ElementAbilityIcons.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
