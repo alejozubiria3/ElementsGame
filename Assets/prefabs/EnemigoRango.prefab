@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 7777174283920419527}
   - component: {fileID: 5063736342584563355}
   - component: {fileID: 8367144709070863006}
+  - component: {fileID: 3764214035128817200}
   m_Layer: 0
   m_Name: EnemigoRango
   m_TagString: Enemy
@@ -65,7 +66,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 43.85, y: 1, z: 40.490017}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6707491603561692389}
@@ -102,7 +103,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 974102b1f3ce06f4c9770ba5923b9493, type: 2}
+  - {fileID: 2100000, guid: 46304d066a82a80448f8538496ef1b64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -252,3 +253,16 @@ MonoBehaviour:
   losMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3764214035128817200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151446815763761530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b2506a991e3b946ba71fbf6329f3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredTag: Enemy
