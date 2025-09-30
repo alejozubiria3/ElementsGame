@@ -55939,6 +55939,8 @@ MonoBehaviour:
   projSpeed: 22
   projLifetime: 4
   maxRange: 30
+  fireColor: {r: 0.9528302, g: 0.4201805, b: 0.06741722, a: 1}
+  waterColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1001 &1244465476
 PrefabInstance:
   m_ObjectHideFlags: 0
