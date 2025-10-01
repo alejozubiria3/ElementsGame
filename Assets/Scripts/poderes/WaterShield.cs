@@ -29,11 +29,16 @@ public class WaterShield : MonoBehaviour
     private bool _active;
     private float _activeEndTime; 
 
+    [SerializeField] private AnimationManager anim; // 👈 Referencia al animador
+
+
     void Awake()
     {
         _element = GetComponent<ElementSwitcher>();
         if (!playerHealth) playerHealth = GetComponent<PlayerSimpleHealth>();
         if (!mana) mana = GetComponent<ManaSystem>();
+        if (!anim) anim = GetComponentInChildren<AnimationManager>(); // 👈 busca en hijos
+
 
         if (shieldSphere != null)
             shieldSphere.SetActive(false);
@@ -82,6 +87,7 @@ public class WaterShield : MonoBehaviour
 
     void Activate()
     {
+        if (anim) anim.PlayWaterShield();
         if (shieldSphere) shieldSphere.SetActive(true);
         if (playerHealth) playerHealth.isInvulnerable = true;
 
@@ -89,6 +95,7 @@ public class WaterShield : MonoBehaviour
         _cdTimer = cooldown;
 
         _activeEndTime = Time.time + duration;
+
 
         CancelInvoke(nameof(Deactivate));
         Invoke(nameof(Deactivate), duration);
