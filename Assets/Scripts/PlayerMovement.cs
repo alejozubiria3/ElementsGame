@@ -20,12 +20,18 @@ public class PlayerMovement : MonoBehaviour
     Vector3 groundNormal = Vector3.up;
     bool isGrounded;
 
+    private AnimationManager anim;
+
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+
+        anim = GetComponentInChildren<AnimationManager>();
+
     }
 
     void Update()
@@ -35,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         float z = Input.GetAxisRaw("Vertical");
         moveInput = new Vector3(x, 0f, z).normalized;
 
+        bool isMoving = moveInput.sqrMagnitude > 0.0001f;
+        anim.SetRunning(isMoving);
        
         if (faceMoveDirection && moveInput.sqrMagnitude > 0.0001f)
         {

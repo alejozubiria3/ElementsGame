@@ -8,6 +8,7 @@ public class FireballShooter : MonoBehaviour
     [SerializeField] private ManaSystem mana;
     [Tooltip("Punto de spawn (vacío en la mano/pecho). Si no se asigna, usa la posición del Player.")]
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private AnimationManager anim;
 
     [Header("Costos")]
     [SerializeField] private float manaCost = 15f;
@@ -32,6 +33,7 @@ public class FireballShooter : MonoBehaviour
         _element = GetComponent<ElementSwitcher>();
         _selector = GetComponent<TargetSelector>();
         if (!mana) mana = GetComponent<ManaSystem>();
+        if (!anim) anim = GetComponentInChildren<AnimationManager>();
 
         if (!spawnPoint)
             Debug.LogWarning("[FireballShooter] No asignaste spawnPoint; se usará la posición del Player.");
@@ -63,6 +65,8 @@ public class FireballShooter : MonoBehaviour
                 Debug.Log($"[Fireball] Maná insuficiente. Requiere {manaCost}");
                 return;
             }
+           
+            if (anim) anim.PlayFireAttack();
 
             ShootAt(target.transform);
             _cd = cooldown;
