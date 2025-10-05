@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ManaSystem.cs" />
     <Compile Include="Assets\Scripts\poderes\FireballShooter.cs" />
     <Compile Include="Assets\Scripts\poderes\BasicAutoAttack.cs" />
+    <Compile Include="Assets\EnemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\MiniMapEnemyMarker.cs" />
     <Compile Include="Assets\Scripts\TargetSelector.cs" />
     <Compile Include="Assets\AlignToGroundOnSpawn.cs" />
