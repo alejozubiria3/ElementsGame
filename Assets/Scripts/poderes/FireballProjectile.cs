@@ -14,27 +14,28 @@ public class FireballProjectile : MonoBehaviour
     private Collider _myCol;
     private GameObject _instigator;
 
+    
+    private int _detectionLayer;
+
     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _myCol = GetComponent<Collider>();
 
-        
         _rb.useGravity = false;
         _rb.interpolation = RigidbodyInterpolation.Interpolate;
         _rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
 
-       
         _myCol.isTrigger = true;
 
-       
         var rend = GetComponentInChildren<Renderer>();
         if (rend) rend.material.color = fireColor;
+
+        
+        _detectionLayer = LayerMask.NameToLayer("Detection");
     }
 
-    /// <summary>
-    
-    /// </summary>
+    /// <summary>Lanza la fireball</summary>
     public void Launch(Vector3 dir, float speed, float lifetime, GameObject instigator)
     {
         _instigator = instigator;
@@ -55,31 +56,31 @@ public class FireballProjectile : MonoBehaviour
         
         if (_instigator && other.transform.root == _instigator.transform) return;
 
-       
-        bool isEnemyTag = other.CompareTag("Enemy") || other.transform.root.CompareTag("Enemy");
-        if (isEnemyTag)
+        
+        if (other.isTrigger) return;
+
+        
+        if (_detectionLayer != -1 && other.gameObject.layer == _detectionLayer) return;
+
+        
+        var enemy = other.GetComponentInParent<EnemyHealth>();
+        if (enemy != null && !enemy.isDead)
         {
-           
-            var enemy = other.GetComponentInParent<EnemyHealth>();
-            if (enemy != null && !enemy.isDead)
-            {
-                enemy.TakeDamage(damage, false);
+            enemy.TakeDamage(damage, false);
 
-                
-                var burn = enemy.GetComponent<BurnEffect>();
-                if (burn == null) burn = enemy.gameObject.AddComponent<BurnEffect>();
-                burn.tickDamage = 5f;
-                burn.tickInterval = 1f;
-                burn.duration = 3f;
-                burn.StartBurn();
+            
+            var burn = enemy.GetComponent<BurnEffect>();
+            if (burn == null) burn = enemy.gameObject.AddComponent<BurnEffect>();
+            burn.tickDamage = 5f;
+            burn.tickInterval = 1f;
+            burn.duration = 3f;
+            burn.StartBurn();
 
-                Destroy(gameObject);
-                return;
-            }
+            Destroy(gameObject);
+            return;
         }
 
         
-        if (!other.isTrigger)
-            Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

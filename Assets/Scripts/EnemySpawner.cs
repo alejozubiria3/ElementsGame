@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.AI; 
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -11,20 +12,31 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Spawn Settings")]
     public int enemyCount = 10;
-    public float yOffset = 1f;
-    [Range(0f, 1f)] public float rangedChance = 0.5f; 
+
+    [Tooltip("Separación final del suelo para evitar interpenetración")]
+    public float extraY = 0.05f;
+
+    [Header("Ajuste al suelo")]
+    [SerializeField] LayerMask groundMask = ~0;  
+    [SerializeField] float snapUp = 50f;         
+    [SerializeField] float snapDown = 200f;      
+    [SerializeField] bool tryNavMesh = true;     
+
     [Header("Spawnpoints (opcional)")]
-    public Transform[] spawnPoints;          
-    public bool autoUseChildSpawnPoints = true;
-    public float spawnRadius = 3f;           
-    public int maxPerPoint = 3;              
+    public Transform[] spawnPoints;              
+    public bool autoUseChildSpawnPoints = true;  
+    public float spawnRadius = 3f;               
+    public int maxPerPoint = 3;                  
+
+    [Header("Tipo de enemigo")]
+    [Range(0f, 1f)] public float rangedChance = 0.5f;
 
     [Header("Minimapa (para markers de enemigos)")]
-    public RectTransform minimapPanel;       
-    public RectTransform enemyMarkerPrefab;  
-    public Camera minimapCamera;            
-    public Transform minimapCenter;         
-    public float markerVisionRadius = 50f;   
+    public RectTransform minimapPanel;
+    public RectTransform enemyMarkerPrefab;
+    public Camera minimapCamera;
+    public Transform minimapCenter;
+    public float markerVisionRadius = 50f;
     public bool markerClampToEdge = true;
     public float markerEdgePadding = 6f;
 
@@ -32,8 +44,7 @@ public class EnemySpawner : MonoBehaviour
     {
         
         if ((spawnPoints == null || spawnPoints.Length == 0) && autoUseChildSpawnPoints)
-            spawnPoints = GetComponentsInChildren<Transform>(true)
-                          .Where(t => t != transform).ToArray();
+            spawnPoints = GetComponentsInChildren<Transform>(true).Where(t => t != transform).ToArray();
 
         SpawnEnemies();
     }
@@ -71,11 +82,12 @@ public class EnemySpawner : MonoBehaviour
                 {
                     Vector3 c = spawnPoints[i].position;
                     Vector2 rnd = Random.insideUnitCircle * spawnRadius;
-                    Vector3 pos = new Vector3(c.x + rnd.x, c.y + yOffset, c.z + rnd.y);
+                    Vector3 guess = new Vector3(c.x + rnd.x, c.y, c.z + rnd.y);
 
-                    var enemy = InstantiateRandomEnemy(pos, Quaternion.Euler(0, Random.Range(0f, 360f), 0f));
+                    if (!TrySnapToGround(ref guess)) continue;
+
+                    var enemy = InstantiateRandomEnemy(guess, Quaternion.Euler(0, Random.Range(0f, 360f), 0f));
                     if (enemy) CreateMinimapMarkerFor(enemy.transform);
-
                     spawned++;
                 }
             }
@@ -98,23 +110,27 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < toSpawn; i++)
         {
             int x, z, safety = 0;
+            Vector2Int cell;
             do
             {
                 x = Random.Range(0, map.width);
                 z = Random.Range(0, map.height);
+                cell = new Vector2Int(x, z);
                 safety++;
                 if (safety > 100) break;
-            } while (used.Contains(new Vector2Int(x, z)));
+            } while (used.Contains(cell));
 
-            used.Add(new Vector2Int(x, z));
+            used.Add(cell);
 
-            Vector3 pos = new Vector3(
+            Vector3 guess = new Vector3(
                 x * map.cellSize + map.cellSize * 0.5f,
-                yOffset,
+                0f, 
                 z * map.cellSize + map.cellSize * 0.5f
             );
 
-            var enemy = InstantiateRandomEnemy(pos, Quaternion.identity);
+            if (!TrySnapToGround(ref guess)) continue;
+
+            var enemy = InstantiateRandomEnemy(guess, Quaternion.identity);
             if (enemy) CreateMinimapMarkerFor(enemy.transform);
         }
     }
@@ -132,30 +148,57 @@ public class EnemySpawner : MonoBehaviour
         return Instantiate(prefab, position, rotation, transform);
     }
 
-   
     void CreateMinimapMarkerFor(Transform enemy)
     {
         if (!minimapPanel || !enemyMarkerPrefab || !minimapCamera || !minimapCenter || !enemy) return;
 
-        
         var marker = Instantiate(enemyMarkerPrefab, minimapPanel);
-        marker.sizeDelta = new Vector2(10, 10); 
+        marker.sizeDelta = new Vector2(10, 10);
 
-        
         var mm = marker.GetComponent<MiniMapEnemyMarker>();
         if (!mm) mm = marker.gameObject.AddComponent<MiniMapEnemyMarker>();
 
-        
-        mm.target        = enemy;           
-        mm.markerUI      = marker;          
-        mm.minimap       = minimapPanel;    
-        mm.minimapCamera = minimapCamera;   
-        mm.center        = minimapCenter;   
-
-        
+        mm.target        = enemy;
+        mm.markerUI      = marker;
+        mm.minimap       = minimapPanel;
+        mm.minimapCamera = minimapCamera;
+        mm.center        = minimapCenter;
         mm.visionRadius  = markerVisionRadius;
         mm.clampToEdge   = markerClampToEdge;
         mm.edgePadding   = markerEdgePadding;
-        mm.autoDestroyWhenTargetGone = true; 
+        mm.autoDestroyWhenTargetGone = true;
+    }
+
+  
+    bool TrySnapToGround(ref Vector3 pos)
+    {
+        
+        Vector3 start = pos + Vector3.up * snapUp;
+        float maxDist = snapUp + snapDown;
+
+        if (Physics.Raycast(start, Vector3.down, out RaycastHit hit, maxDist, groundMask, QueryTriggerInteraction.Ignore))
+        {
+            
+            if (Vector3.Angle(hit.normal, Vector3.up) > 55f)
+                return false;
+
+            pos = hit.point + Vector3.up * extraY;
+
+            
+            if (tryNavMesh && NavMesh.SamplePosition(pos, out NavMeshHit nHit, 1.0f, NavMesh.AllAreas))
+                pos = nHit.position + Vector3.up * extraY;
+
+            return true;
+        }
+
+        
+        if (tryNavMesh && NavMesh.SamplePosition(pos, out NavMeshHit nOnly, snapDown, NavMesh.AllAreas))
+        {
+            pos = nOnly.position + Vector3.up * extraY;
+            return true;
+        }
+
+        Debug.LogWarning($"[EnemySpawner] No se encontró suelo para {pos}. Revisa groundMask/escena.");
+        return false;
     }
 }
