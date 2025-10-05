@@ -68,11 +68,11 @@
     <Compile Include="Assets\Scripts\flecha.cs" />
     <Compile Include="Assets\Scripts\ManaSystem.cs" />
     <Compile Include="Assets\Scripts\poderes\FireballShooter.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\poderes\BasicAutoAttack.cs" />
-    <Compile Include="Assets\EnemyHealthBar.cs" />
     <Compile Include="Assets\Scripts\MiniMapEnemyMarker.cs" />
+    <Compile Include="Assets\Scripts\AlignToGroundOnSpawn.cs" />
     <Compile Include="Assets\Scripts\TargetSelector.cs" />
-    <Compile Include="Assets\AlignToGroundOnSpawn.cs" />
     <Compile Include="Assets\Scripts\HealthBarSwitcher.cs" />
     <Compile Include="Assets\Scripts\ManaBarUI.cs" />
     <Compile Include="Assets\Scripts\MiniMapEnemyMarkers.cs" />
