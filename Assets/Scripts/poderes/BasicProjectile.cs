@@ -1,50 +1,121 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Collider)), RequireComponent(typeof(Rigidbody))]
 public class BasicProjectile : MonoBehaviour
 {
-    private float _damage;
-    private GameObject _instigator;
-    private float _speed;
-    private float _lifetime;
-    private Rigidbody _rb;
-    private Renderer _renderer;
+    [Header("Daño")]
+    [SerializeField] float damage = 6f;  
+
+    [Header("Colisión robusta")]
+    [SerializeField] LayerMask hitMask = ~0;     
+    [SerializeField] float sweepRadius = 0.16f;  
+
+    [Header("Visual (opcional)")]
+    [SerializeField] Renderer colorRenderer;
+
+    float _damage;
+    GameObject _instigator;
+    float _speed;
+    float _lifetime;
+
+    Rigidbody _rb;
+    Collider _col;
+    int _detectionLayer;
+    Vector3 _lastPos;
 
     void Awake()
     {
-        _rb = GetComponent<Rigidbody>();
-        _renderer = GetComponent<Renderer>();
+        _rb  = GetComponent<Rigidbody>();
+        _col = GetComponent<Collider>();
+        if (!colorRenderer) colorRenderer = GetComponentInChildren<Renderer>();
 
-        if (_rb)
-        {
-            _rb.useGravity = false;
-            _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
-        }
+        
+        _rb.useGravity = false;
+        _rb.interpolation = RigidbodyInterpolation.Interpolate;
+        _rb.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+
+       
+        _col.isTrigger = true;
+
+        _detectionLayer = LayerMask.NameToLayer("Detection");
     }
 
-    public void Launch(Vector3 dir, float speed, float lifetime, float damage, GameObject instigator)
+    public void Launch(Vector3 dir, float speed, float lifetime, float dmg, GameObject instigator)
     {
-        _damage = damage;
         _instigator = instigator;
-        _speed = speed;
-        _lifetime = lifetime;
+        _speed      = speed;
+        _lifetime   = lifetime;
+        _damage     = dmg > 0f ? dmg : damage;
 
-        if (_rb) _rb.linearVelocity = dir * _speed;
+       
+        var instCols = _instigator.GetComponentsInChildren<Collider>(true);
+        foreach (var c in instCols) Physics.IgnoreCollision(_col, c, true);
+
+        _rb.linearVelocity = dir.normalized * _speed;
+        _lastPos = transform.position;
+
         Destroy(gameObject, _lifetime);
     }
 
     public void SetColor(Color color)
     {
-        if (_renderer != null)
-            _renderer.material.color = color;
+        if (colorRenderer) colorRenderer.material.color = color;
     }
 
-    void OnTriggerEnter(Collider other)
+    void FixedUpdate()
     {
-        if (other.attachedRigidbody && other.attachedRigidbody.gameObject == _instigator) return;
+        
+        Vector3 cur   = transform.position;
+        Vector3 delta = cur - _lastPos;
+        float dist    = delta.magnitude;
 
-        if (other.TryGetComponent<EnemyHealth>(out var eh))
-            eh.TakeDamage(_damage);
+        if (dist > 0f)
+        {
+            Vector3 dir = delta / dist;
 
-        Destroy(gameObject);
+            
+            if (Physics.SphereCast(_lastPos, sweepRadius, dir, out var hit, dist, hitMask, QueryTriggerInteraction.Ignore))
+            {
+                HandleHit(hit.collider);
+                _lastPos = cur;
+                return;
+            }
+
+            
+            if (Physics.Raycast(_lastPos, dir, out hit, dist, hitMask, QueryTriggerInteraction.Ignore))
+            {
+                HandleHit(hit.collider);
+                _lastPos = cur;
+                return;
+            }
+        }
+
+        _lastPos = cur;
     }
-}   
+
+    
+    void OnTriggerEnter(Collider other) => HandleHit(other);
+
+    void HandleHit(Collider other)
+    {
+        
+        if (_instigator && other.transform.root == _instigator.transform) return;
+
+        
+        if (other.isTrigger) return;
+        if (_detectionLayer != -1 && other.gameObject.layer == _detectionLayer) return;
+
+        
+        var eh = other.GetComponentInParent<EnemyHealth>();
+        if (eh != null && !eh.isDead)
+        {
+            eh.TakeDamage(_damage, false);
+            Destroy(gameObject);
+            return;
+        }
+
+        
+        if (((1 << other.gameObject.layer) & hitMask) != 0)
+            Destroy(gameObject);
+    }
+}

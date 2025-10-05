@@ -55483,7 +55483,7 @@ Transform:
   m_GameObject: {fileID: 1010218931}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.53, z: 0.607}
+  m_LocalPosition: {x: -0, y: -0.53, z: 1.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55885,7 +55885,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireballPrefab: {fileID: 9097085367680139180, guid: 027a69a3d61ccb246b77d1bdd9b0a2b4, type: 3}
   mana: {fileID: 0}
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 1010218932}
   anim: {fileID: 0}
   manaCost: 15
   speed: 8
@@ -55996,7 +55996,7 @@ MonoBehaviour:
   basicProjectilePrefab: {fileID: 6312002255583675853, guid: 15bbd9cd57555e64b95df95e55f994ce, type: 3}
   muzzle: {fileID: 1065246440}
   intervalSeconds: 3
-  damage: 6
+  damage: 10
   projSpeed: 22
   projLifetime: 4
   maxRange: 30
