@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8897014232081096164}
   m_Layer: 0
   m_Name: basico
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,3 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f625b7d539c8a488038e750fd5d0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 6
+  hitMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  sweepRadius: 0.16
+  colorRenderer: {fileID: 0}

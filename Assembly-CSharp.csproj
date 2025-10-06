@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\MiniMapEnemyMarker.cs" />
     <Compile Include="Assets\Scripts\AlignToGroundOnSpawn.cs" />
     <Compile Include="Assets\Scripts\TargetSelector.cs" />
+    <Compile Include="Assets\ForceAggroOnHit.cs" />
     <Compile Include="Assets\Scripts\HealthBarSwitcher.cs" />
     <Compile Include="Assets\Scripts\ManaBarUI.cs" />
     <Compile Include="Assets\Scripts\MiniMapEnemyMarkers.cs" />

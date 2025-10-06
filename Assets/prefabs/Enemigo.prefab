@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 2630822441886683285}
   - component: {fileID: 3370340471021444311}
   - component: {fileID: 7718622916125954731}
+  - component: {fileID: 5001589064191291590}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Enemy
@@ -189,6 +190,15 @@ MonoBehaviour:
   damage: 20
   attackCooldown: 1
   maxHealth: 50
+  aggroHoldSeconds: 8
+  player: {fileID: 0}
+  playerTag: Player
+  reacquireInterval: 0.4
+  proximityScanRadius: 60
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  debugLogs: 1
 --- !u!136 &2918003994129627045
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -307,6 +317,18 @@ MonoBehaviour:
   snapDown: 200
   extraY: 0.05
   maxSlope: 55
+--- !u!114 &5001589064191291590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4413887343776905992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 249395047a6bd5842913534c913e0577, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4955076148884248013
 GameObject:
   m_ObjectHideFlags: 0
