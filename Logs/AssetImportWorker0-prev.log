@@ -15,7 +15,7 @@ C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51473
+58651
 -job-worker-count
 5
 -background-job-worker-count
@@ -59,14 +59,12 @@ C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [13540]  Target information:
+Player connection [19380]  Target information:
 
-Player connection [13540]  * "[IP] 192.168.0.5 [Port] 0 [Flags] 2 [Guid] 973988899 [EditorId] 973988899 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [19380]  * "[IP] 192.168.0.5 [Port] 0 [Flags] 2 [Guid] 3233107548 [EditorId] 3233107548 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [13540]  * "[IP] 172.16.0.2 [Port] 0 [Flags] 2 [Guid] 973988899 [EditorId] 973988899 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
-
-Player connection [13540] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [13540] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19380] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19380] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -78,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 4.17 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 4.24 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.44f1 (101c91f3a8fb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/Resources/UnitySubsystems
@@ -94,43 +92,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56876
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56056
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009706 seconds.
-- Loaded All Assemblies, in  0.883 seconds
+Registered in 0.006252 seconds.
+- Loaded All Assemblies, in  0.653 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.677 seconds
-Domain Reload Profiling: 1551ms
-	BeginReloadAssembly (348ms)
+- Finished resetting the current domain, in  0.532 seconds
+Domain Reload Profiling: 1176ms
+	BeginReloadAssembly (215ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (87ms)
-	RebuildNativeTypeToScriptingClass (28ms)
-	initialDomainReloadingComplete (110ms)
-	LoadAllAssembliesAndSetupDomain (300ms)
-		LoadAssemblies (340ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (83ms)
+	LoadAllAssembliesAndSetupDomain (270ms)
+		LoadAssemblies (208ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (293ms)
-			TypeCache.Refresh (290ms)
-				TypeCache.ScanAssembly (270ms)
+		AnalyzeDomain (265ms)
+			TypeCache.Refresh (263ms)
+				TypeCache.ScanAssembly (240ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (678ms)
+	FinalizeReload (532ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (595ms)
+		SetupLoadedEditorAssemblies (463ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (41ms)
-			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (108ms)
-			ProcessInitializeOnLoadAttributes (313ms)
-			ProcessInitializeOnLoadMethodAttributes (126ms)
+			InitializePlatformSupportModulesInManaged (33ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (83ms)
+			ProcessInitializeOnLoadAttributes (254ms)
+			ProcessInitializeOnLoadMethodAttributes (87ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -139,8 +137,8 @@ Domain Reload Profiling: 1551ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.617 seconds
-Refreshing native plugins compatible for Editor in 2.65 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.165 seconds
+Refreshing native plugins compatible for Editor in 1.93 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Missing types referenced from component UniversalRenderPipelineGlobalSettings on game object UniversalRenderPipelineGlobalSettings:
 	UnityEngine.Rendering.LightmapSamplingSettings, Unity.RenderPipelines.Core.Runtime (1 object)
@@ -149,208 +147,138 @@ Missing types referenced from component UniversalRenderPipelineGlobalSettings on
 	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionPersistentResources, Unity.RenderPipelines.Universal.Runtime (1 object)
 	UnityEngine.Rendering.VrsRenderPipelineRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.455 seconds
-Domain Reload Profiling: 3056ms
-	BeginReloadAssembly (311ms)
+- Finished resetting the current domain, in  1.225 seconds
+Domain Reload Profiling: 2378ms
+	BeginReloadAssembly (254ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (11ms)
+		DisableScriptedObjects (12ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (49ms)
-	RebuildCommonClasses (78ms)
-	RebuildNativeTypeToScriptingClass (26ms)
-	initialDomainReloadingComplete (76ms)
-	LoadAllAssembliesAndSetupDomain (1110ms)
-		LoadAssemblies (788ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (70ms)
+	LoadAllAssembliesAndSetupDomain (757ms)
+		LoadAssemblies (563ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (503ms)
-			TypeCache.Refresh (384ms)
-				TypeCache.ScanAssembly (362ms)
-			BuildScriptInfoCaches (98ms)
+		AnalyzeDomain (342ms)
+			TypeCache.Refresh (244ms)
+				TypeCache.ScanAssembly (227ms)
+			BuildScriptInfoCaches (80ms)
 			ResolveRequiredComponents (16ms)
-	FinalizeReload (1456ms)
+	FinalizeReload (1225ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1188ms)
+		SetupLoadedEditorAssemblies (979ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (222ms)
-			ProcessInitializeOnLoadAttributes (704ms)
-			ProcessInitializeOnLoadMethodAttributes (237ms)
-			AfterProcessingInitializeOnLoad (16ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (213ms)
+			ProcessInitializeOnLoadAttributes (559ms)
+			ProcessInitializeOnLoadMethodAttributes (182ms)
+			AfterProcessingInitializeOnLoad (14ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (12ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 3.19 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.73 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 216 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6220 unused Assets / (4.4 MB). Loaded Objects now: 6923.
-Memory consumption went from 162.2 MB to 157.8 MB.
-Total: 22.057500 ms (FindLiveObjects: 1.157500 ms CreateObjectMapping: 2.725900 ms MarkObjects: 12.137100 ms  DeleteObjects: 6.034500 ms)
+Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6223 unused Assets / (4.7 MB). Loaded Objects now: 6931.
+Memory consumption went from 167.1 MB to 162.5 MB.
+Total: 14.731900 ms (FindLiveObjects: 0.904700 ms CreateObjectMapping: 0.851000 ms MarkObjects: 8.763100 ms  DeleteObjects: 4.211800 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 112954.288242 seconds.
-  path: Assets/Art_Character/Ch16_1001_Glossiness.png
-  artifactKey: Guid(a23a5018a87f9904183f58bd766ecf39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Character/Ch16_1001_Glossiness.png using Guid(a23a5018a87f9904183f58bd766ecf39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8e4827cc07a0febee77b4b6930c47109') in 0.1465438 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/TerrainData_169d4d4f-65ed-4f71-a17b-7091c0f7c301.asset
-  artifactKey: Guid(e452841f76e6d49409e8a85e8e89c1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TerrainData_169d4d4f-65ed-4f71-a17b-7091c0f7c301.asset using Guid(e452841f76e6d49409e8a85e8e89c1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23478aca8cbfe8b7bb709a30c1b04880') in 0.0093507 seconds
+  Time since last request: 19705.796010 seconds.
+  path: Assets/Art_Textures/New Folder/Floor_Sand/sAND.mat
+  artifactKey: Guid(e6da45353bf0f414a8bb15dbe8e3d4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Textures/New Folder/Floor_Sand/sAND.mat using Guid(e6da45353bf0f414a8bb15dbe8e3d4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '612d31d1f290aea8478eb1d514051426') in 0.7446379 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/New Terrain.asset
-  artifactKey: Guid(6186bce2193b76b4f902d54dda940fa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain.asset using Guid(6186bce2193b76b4f902d54dda940fa4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86e7cac002ad72b8086e9655797652c4') in 0.0077827 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 76.301776 seconds.
+  path: Assets/Art_Textures/New Folder/Floor_Sand/sAND.mat
+  artifactKey: Guid(e6da45353bf0f414a8bb15dbe8e3d4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Textures/New Folder/Floor_Sand/sAND.mat using Guid(e6da45353bf0f414a8bb15dbe8e3d4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b40cddb3fabcf65137b7c26deda3df03') in 0.0789188 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Art_Character/Ch16_1002_Specular.png
-  artifactKey: Guid(43f228811d96ba148b22ac5e3dbdde6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Character/Ch16_1002_Specular.png using Guid(43f228811d96ba148b22ac5e3dbdde6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd20e6c9b96bd3df64b72eecbc86f7216') in 0.0268596 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 52.963636 seconds.
+  path: Assets/Art_Textures/New Folder/Floor_Sand/VertexPainter.shadergraph
+  artifactKey: Guid(946f73f37bde33449ba88dbd17d10f70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Textures/New Folder/Floor_Sand/VertexPainter.shadergraph using Guid(946f73f37bde33449ba88dbd17d10f70) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a546599f9f15b47cb4e7a3a44adf4606') in 0.0479434 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Art_Character/Ch16_1001_Normal.png
-  artifactKey: Guid(bc6e356d1e764734eb12dcd1da85dd5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Character/Ch16_1001_Normal.png using Guid(bc6e356d1e764734eb12dcd1da85dd5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7be05be73c8f75d68de9ada3b979747e') in 0.086692 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 44.575750 seconds.
+  path: Assets/Art_Textures/cliff_rocks_04_1k/Cliff_Rock.mat
+  artifactKey: Guid(b365888606adfdb488094cb366b765cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Textures/cliff_rocks_04_1k/Cliff_Rock.mat using Guid(b365888606adfdb488094cb366b765cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '73a3aadb129ba5583a438812514d20ec') in 0.0403285 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Art_Character/Ch16_1002_Diffuse.png
-  artifactKey: Guid(6a73b27b247d6d949966bff680cd4428) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Character/Ch16_1002_Diffuse.png using Guid(6a73b27b247d6d949966bff680cd4428) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f08f94619829d7932bfd8039d5ab7a85') in 0.0377629 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+  Time since last request: 116.492079 seconds.
+  path: Assets/Art_Textures/New Folder/Floor_Sand/sAND.mat
+  artifactKey: Guid(e6da45353bf0f414a8bb15dbe8e3d4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Textures/New Folder/Floor_Sand/sAND.mat using Guid(e6da45353bf0f414a8bb15dbe8e3d4b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '029e6b1cd7e6489a8e4daca4ced4e29f') in 3.4587878 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Art_Character/Ch16_1002_Normal.png
-  artifactKey: Guid(be84ffc1e47af3c428352e175ec3ae0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Character/Ch16_1002_Normal.png using Guid(be84ffc1e47af3c428352e175ec3ae0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e3d7eced0a5e53e5ef305970e75578b') in 0.030654 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.144 seconds
+Refreshing native plugins compatible for Editor in 1.86 ms, found 3 plugins.
+Missing types referenced from component UniversalRenderPipelineGlobalSettings on game object UniversalRenderPipelineGlobalSettings:
+	UnityEngine.Rendering.LightmapSamplingSettings, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.RenderingDebuggerRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionDynamicResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionPersistentResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.VrsRenderPipelineRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.154 seconds
+Domain Reload Profiling: 2289ms
+	BeginReloadAssembly (341ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (38ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (89ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (669ms)
+		LoadAssemblies (546ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (265ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (238ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (1155ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (846ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (200ms)
+			ProcessInitializeOnLoadAttributes (530ms)
+			ProcessInitializeOnLoadMethodAttributes (95ms)
+			AfterProcessingInitializeOnLoad (13ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (21ms)
+Refreshing native plugins compatible for Editor in 2.19 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6222 unused Assets / (4.4 MB). Loaded Objects now: 7012.
+Memory consumption went from 156.8 MB to 152.3 MB.
+Total: 17.155400 ms (FindLiveObjects: 1.154200 ms CreateObjectMapping: 0.651800 ms MarkObjects: 8.738300 ms  DeleteObjects: 6.609100 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 6.207284 seconds.
-  path: Assets/Art_EnemyRock
-  artifactKey: Guid(34d76948f434de44288c75e1fe5c61f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock using Guid(34d76948f434de44288c75e1fe5c61f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c75ad33547d8ab5ce2dbcdc2dc3954a6') in 0.0008001 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 61.698515 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/Attack_Biped_Melee_A.FBX
-  artifactKey: Guid(4accd6b789e98fe4a8ee5ce9c34c0857) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/Attack_Biped_Melee_A.FBX using Guid(4accd6b789e98fe4a8ee5ce9c34c0857) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '129280325b7f3e883e4e4e9b41bb0a1a') in 0.0305718 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/Attack_Melee_B.FBX
-  artifactKey: Guid(8b1752416e07bac4b88a6a17c5584f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/Attack_Melee_B.FBX using Guid(8b1752416e07bac4b88a6a17c5584f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cc35c2687b779b5cfee82d876dcc5118') in 0.0084907 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/Jump_Start.FBX
-  artifactKey: Guid(8ad2d195ed7cab247a83869a16953855) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/Jump_Start.FBX using Guid(8ad2d195ed7cab247a83869a16953855) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2766967ad4c60e3698eb0aa063f4cc60') in 0.01039 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/Attack_Melee_A.FBX
-  artifactKey: Guid(85412064981b24943a1cff793d875d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/Attack_Melee_A.FBX using Guid(85412064981b24943a1cff793d875d74) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a263c79ff655e119cba1d6d85b96ab23') in 0.0087475 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/Attack_Biped_Melee_B.FBX
-  artifactKey: Guid(2eb408c792c4bd541bb77030d9b37760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/Attack_Biped_Melee_B.FBX using Guid(2eb408c792c4bd541bb77030d9b37760) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ca2596ae2f4434172a5040c731a413d3') in 0.0098226 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/Attack_Biped_Melee_C.FBX
-  artifactKey: Guid(8546997bd5eeaf744928ca78e664c1c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/Attack_Biped_Melee_C.FBX using Guid(8546997bd5eeaf744928ca78e664c1c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9876a126285dceca34a25653dc6b0169') in 0.0103869 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/HitReact_Back.FBX
-  artifactKey: Guid(f909b00525fb20a4fb30fb1c03f09470) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/HitReact_Back.FBX using Guid(f909b00525fb20a4fb30fb1c03f09470) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1fe53fe42dc31397b27a82f787d1d0da') in 0.0083117 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/HitReact_Front.FBX
-  artifactKey: Guid(a598702dd9f347245bc79074af5ea51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/HitReact_Front.FBX using Guid(a598702dd9f347245bc79074af5ea51c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f7ea5635b1c1a2ffb3ff9b1cf629df0b') in 0.0087293 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/Emote_Master_Roar_T3.FBX
-  artifactKey: Guid(03836e4f485694249a384c70fee5770e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/Emote_Master_Roar_T3.FBX using Guid(03836e4f485694249a384c70fee5770e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '46fc79af2abf9c955152b026c18a09ca') in 0.0124866 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/animations/Idle.FBX
-  artifactKey: Guid(00f4bea124dc82140a9d9702974c7bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/animations/Idle.FBX using Guid(00f4bea124dc82140a9d9702974c7bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b86ba20d9c8ec8c23b3329bd38d15bc8') in 0.0105329 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 407
-
-========================================================================
-Received Import Request.
-  Time since last request: 32.012508 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/textures/T_Rampage_V001_UV01_Torso_normals.TGA.png
-  artifactKey: Guid(464279c7f38ac82489ddd227bfe146d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/textures/T_Rampage_V001_UV01_Torso_normals.TGA.png using Guid(464279c7f38ac82489ddd227bfe146d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ecca87f112da5fe666f62ee2d2a9051d') in 0.0268108 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Art_EnemyRock/EnemyRock/textures/T_Rampage_V001_UV03_Arms_normals.TGA.png
-  artifactKey: Guid(c156958826315714dad4e22cdcc1d26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_EnemyRock/EnemyRock/textures/T_Rampage_V001_UV03_Arms_normals.TGA.png using Guid(c156958826315714dad4e22cdcc1d26b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9768aecd285340d48c304fbc7b41edcc') in 0.0226357 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+Prepare: number of updated asset objects reloaded= 0
