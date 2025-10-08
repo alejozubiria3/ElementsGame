@@ -10,21 +10,24 @@ public class ElementSwitcher : MonoBehaviour
     public Element current = Element.Fire;
 
     [Header("Referencias visuales en el Player")]
-    public Renderer targetRenderer;   
-    public Light targetLight;         
+    public Renderer targetRenderer;
+    public Light targetLight;
 
     [Header("Colores")]
-    public Color fireColor = new Color(1f, 0.3f, 0.1f); 
-    public Color waterColor = Color.cyan;               
+    public Color fireColor = new Color(1f, 0.3f, 0.1f);
+    public Color waterColor = Color.cyan;
 
     [Header("UI de Elemento")]
-    public Image elementIcon;    
-    public Sprite fireSprite;    
-    public Sprite waterSprite;   
+    public Image elementIcon;
+    public Sprite fireSprite;
+    public Sprite waterSprite;
 
     [Header("Flash de feedback")]
     public float flashDuration = 0.18f;
     public AnimationCurve flashCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+
+    [Header("Bloqueos")]
+    [SerializeField] private WaterShield waterShield; 
 
     private Material _matInstance;
     private Color _baseColor;
@@ -32,11 +35,14 @@ public class ElementSwitcher : MonoBehaviour
 
     void Awake()
     {
-       
         if (!targetRenderer) targetRenderer = GetComponentInChildren<Renderer>();
         if (targetRenderer) _matInstance = targetRenderer.material;
 
-        ApplyVisuals(); 
+        
+        if (!waterShield)
+            waterShield = GetComponent<WaterShield>() ?? FindObjectOfType<WaterShield>();
+
+        ApplyVisuals();
     }
 
     void Update()
@@ -49,6 +55,13 @@ public class ElementSwitcher : MonoBehaviour
 
     public void ToggleElement()
     {
+        
+        if (current == Element.Water && waterShield != null && waterShield.IsActive)
+        {
+            Debug.Log("[ElementSwitcher] No puedes cambiar a Fuego mientras el escudo de agua esté activo.");
+            return;
+        }
+
         current = (current == Element.Fire) ? Element.Water : Element.Fire;
         ApplyVisuals();
 
@@ -60,7 +73,6 @@ public class ElementSwitcher : MonoBehaviour
 
     void ApplyVisuals()
     {
-        
         if (_matInstance)
         {
             _baseColor = (current == Element.Fire) ? fireColor : waterColor;
@@ -75,7 +87,6 @@ public class ElementSwitcher : MonoBehaviour
             targetLight.color = _baseColor;
         }
 
-        
         if (elementIcon != null)
         {
             elementIcon.sprite = (current == Element.Fire) ? fireSprite : waterSprite;
@@ -96,8 +107,7 @@ public class ElementSwitcher : MonoBehaviour
             yield return null;
         }
 
-       
         if (_matInstance)
             _matInstance.SetColor("_EmissionColor", _baseColor * 0f);
     }
-}
+}   
