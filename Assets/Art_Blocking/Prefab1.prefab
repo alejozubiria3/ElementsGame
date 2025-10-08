@@ -119258,15 +119258,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 449691141273076257, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.08
+      value: -17.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 449691141273076257, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 32.44
       objectReference: {fileID: 0}
     - target: {fileID: 957657222798359145, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6
+      value: -18.19
       objectReference: {fileID: 0}
     - target: {fileID: 957657222798359145, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.63
+      value: -30.46
       objectReference: {fileID: 0}
     - target: {fileID: 2623095431282111846, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalScale.x
@@ -119321,16 +119325,20 @@ PrefabInstance:
       value: -33.85
       objectReference: {fileID: 0}
     - target: {fileID: 5612521934450585041, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612521934450585041, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.z
       value: -34.86
       objectReference: {fileID: 0}
     - target: {fileID: 8358878276893517237, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -88.55
+      value: -82.37
       objectReference: {fileID: 0}
     - target: {fileID: 8358878276893517237, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 35.09
+      value: 30.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

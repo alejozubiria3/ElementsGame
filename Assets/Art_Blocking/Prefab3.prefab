@@ -90183,16 +90183,24 @@ PrefabInstance:
       value: EnemySpawner
       objectReference: {fileID: 0}
     - target: {fileID: 449691141273076257, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 449691141273076257, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.99
+      value: 7.13
       objectReference: {fileID: 0}
     - target: {fileID: 957657222798359145, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.99
       objectReference: {fileID: 0}
     - target: {fileID: 957657222798359145, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 957657222798359145, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.44
+      value: 7.73
       objectReference: {fileID: 0}
     - target: {fileID: 2623095431282111846, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalScale.x
@@ -90243,12 +90251,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5612521934450585041, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612521934450585041, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 79.5
+      value: 74.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358878276893517237, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -26.4
       objectReference: {fileID: 0}
     - target: {fileID: 8358878276893517237, guid: afbbe582c91675e459d42e8ca47bff33, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 45.9
+      value: 70.91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
