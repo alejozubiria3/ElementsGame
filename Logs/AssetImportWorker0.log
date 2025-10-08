@@ -15,7 +15,7 @@ C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57241
+56210
 -job-worker-count
 5
 -background-job-worker-count
@@ -59,12 +59,14 @@ C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [27164]  Target information:
+Player connection [27616]  Target information:
 
-Player connection [27164]  * "[IP] 192.168.0.5 [Port] 0 [Flags] 2 [Guid] 1326949082 [EditorId] 1326949082 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [27616]  * "[IP] 192.168.0.5 [Port] 0 [Flags] 2 [Guid] 3486923238 [EditorId] 3486923238 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [27164] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [27164] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [27616]  * "[IP] 172.16.0.2 [Port] 0 [Flags] 2 [Guid] 3486923238 [EditorId] 3486923238 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [27616] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [27616] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +78,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 3.43 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.45 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.44f1 (101c91f3a8fb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/Resources/UnitySubsystems
@@ -92,43 +94,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56444
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006825 seconds.
-- Loaded All Assemblies, in  0.761 seconds
+Registered in 0.006754 seconds.
+- Loaded All Assemblies, in  0.631 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.645 seconds
-Domain Reload Profiling: 1399ms
-	BeginReloadAssembly (293ms)
+- Finished resetting the current domain, in  0.510 seconds
+Domain Reload Profiling: 1135ms
+	BeginReloadAssembly (207ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (66ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (90ms)
-	LoadAllAssembliesAndSetupDomain (285ms)
-		LoadAssemblies (276ms)
+	RebuildCommonClasses (71ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (88ms)
+	LoadAllAssembliesAndSetupDomain (237ms)
+		LoadAssemblies (200ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (281ms)
-			TypeCache.Refresh (279ms)
-				TypeCache.ScanAssembly (257ms)
+		AnalyzeDomain (233ms)
+			TypeCache.Refresh (231ms)
+				TypeCache.ScanAssembly (212ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (646ms)
+	FinalizeReload (510ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (571ms)
+		SetupLoadedEditorAssemblies (460ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (35ms)
-			SetLoadedEditorAssemblies (8ms)
-			BeforeProcessingInitializeOnLoad (94ms)
-			ProcessInitializeOnLoadAttributes (322ms)
-			ProcessInitializeOnLoadMethodAttributes (111ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (97ms)
+			ProcessInitializeOnLoadAttributes (238ms)
+			ProcessInitializeOnLoadMethodAttributes (84ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,8 +139,8 @@ Domain Reload Profiling: 1399ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.563 seconds
-Refreshing native plugins compatible for Editor in 2.10 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.262 seconds
+Refreshing native plugins compatible for Editor in 2.46 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Missing types referenced from component UniversalRenderPipelineGlobalSettings on game object UniversalRenderPipelineGlobalSettings:
 	UnityEngine.Rendering.LightmapSamplingSettings, Unity.RenderPipelines.Core.Runtime (1 object)
@@ -147,432 +149,124 @@ Missing types referenced from component UniversalRenderPipelineGlobalSettings on
 	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionPersistentResources, Unity.RenderPipelines.Universal.Runtime (1 object)
 	UnityEngine.Rendering.VrsRenderPipelineRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.306 seconds
-Domain Reload Profiling: 2852ms
-	BeginReloadAssembly (339ms)
+- Finished resetting the current domain, in  1.177 seconds
+Domain Reload Profiling: 2426ms
+	BeginReloadAssembly (266ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (15ms)
+		DisableScriptedObjects (10ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (55ms)
-	RebuildCommonClasses (78ms)
-	RebuildNativeTypeToScriptingClass (26ms)
-	initialDomainReloadingComplete (86ms)
-	LoadAllAssembliesAndSetupDomain (1017ms)
-		LoadAssemblies (728ms)
+		CreateAndSetChildDomain (43ms)
+	RebuildCommonClasses (62ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (833ms)
+		LoadAssemblies (595ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (488ms)
-			TypeCache.Refresh (347ms)
-				TypeCache.ScanAssembly (326ms)
-			BuildScriptInfoCaches (108ms)
-			ResolveRequiredComponents (28ms)
-	FinalizeReload (1306ms)
+		AnalyzeDomain (395ms)
+			TypeCache.Refresh (278ms)
+				TypeCache.ScanAssembly (259ms)
+			BuildScriptInfoCaches (95ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (1178ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1040ms)
+		SetupLoadedEditorAssemblies (944ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
+			InitializePlatformSupportModulesInManaged (3ms)
 			SetLoadedEditorAssemblies (7ms)
-			BeforeProcessingInitializeOnLoad (221ms)
-			ProcessInitializeOnLoadAttributes (576ms)
-			ProcessInitializeOnLoadMethodAttributes (218ms)
+			BeforeProcessingInitializeOnLoad (202ms)
+			ProcessInitializeOnLoadAttributes (542ms)
+			ProcessInitializeOnLoadMethodAttributes (176ms)
 			AfterProcessingInitializeOnLoad (13ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 3.74 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.00 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 216 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6223 unused Assets / (4.5 MB). Loaded Objects now: 6926.
-Memory consumption went from 164.2 MB to 159.7 MB.
-Total: 14.963400 ms (FindLiveObjects: 0.955400 ms CreateObjectMapping: 1.318100 ms MarkObjects: 8.387200 ms  DeleteObjects: 4.300900 ms)
+Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6223 unused Assets / (4.4 MB). Loaded Objects now: 6931.
+Memory consumption went from 165.6 MB to 161.2 MB.
+Total: 13.064700 ms (FindLiveObjects: 0.969800 ms CreateObjectMapping: 1.531700 ms MarkObjects: 7.228700 ms  DeleteObjects: 3.332700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 94999.253005 seconds.
-  path: Assets/Art_Textures/New Folder/Floor_Sand/M_VertexPainter.mat
-  artifactKey: Guid(2326adb43ae476c4e8b0d6f7b9bbd7ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Textures/New Folder/Floor_Sand/M_VertexPainter.mat using Guid(2326adb43ae476c4e8b0d6f7b9bbd7ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e68fadc98474fa39491e19d2475bf894') in 5.9186282 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+  Time since last request: 44310.087479 seconds.
+  path: Packages/com.unity.ugui/Editor Resources/Textures/btn_AlignBottom_Light.psd
+  artifactKey: Guid(585b70cb75dd43efbfead809c30a1731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.ugui/Editor Resources/Textures/btn_AlignBottom_Light.psd using Guid(585b70cb75dd43efbfead809c30a1731) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c6e8c3d83827cc83ab566e87071dde82') in 0.0988598 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 197.379196 seconds.
-  path: Assets/InputSystem_Actions.inputactions
-  artifactKey: Guid(052faaac586de48259a63d0c4782560b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/InputSystem_Actions.inputactions using Guid(052faaac586de48259a63d0c4782560b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5e3f70f0364ded6a0e35bba7f5564b43') in 0.0216298 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 20
+  Time since last request: 0.000020 seconds.
+  path: Packages/com.unity.render-pipelines.core/Editor/Lighting/Icons/PresetRim_Right.png
+  artifactKey: Guid(1deb07c84dc414b4388bf2970d0c9aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.core/Editor/Lighting/Icons/PresetRim_Right.png using Guid(1deb07c84dc414b4388bf2970d0c9aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4bfb63e17bc58a7c674fb194c7009613') in 0.0228291 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/New Terrain 2.asset
-  artifactKey: Guid(30e5dbc723453184b8b8c3686bae1c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain 2.asset using Guid(30e5dbc723453184b8b8c3686bae1c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2902ac0270b7d7c56315258923105698') in 0.0248035 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 24.145347 seconds.
+  path: Assets/Art_Efects/M_Player.mat
+  artifactKey: Guid(997942abaebaf654c95d0261bb202ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Efects/M_Player.mat using Guid(997942abaebaf654c95d0261bb202ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '197b994ba0a7e3687196124e48ac8df1') in 0.7122507 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/TerrainData_169d4d4f-65ed-4f71-a17b-7091c0f7c301.asset
-  artifactKey: Guid(e452841f76e6d49409e8a85e8e89c1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TerrainData_169d4d4f-65ed-4f71-a17b-7091c0f7c301.asset using Guid(e452841f76e6d49409e8a85e8e89c1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23478aca8cbfe8b7bb709a30c1b04880') in 0.009255 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 97.308221 seconds.
+  path: Assets/Art_Efects/VFX_FuegoRopa.shadergraph
+  artifactKey: Guid(b10725cb666208849aadee7f80d499a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Efects/VFX_FuegoRopa.shadergraph using Guid(b10725cb666208849aadee7f80d499a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c62166194cea7e8f8fda79a15806f5ea') in 0.036696 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/New Terrain 1.asset
-  artifactKey: Guid(f11525b75cf54ca4cb51cd51254cdfbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/New Terrain 1.asset using Guid(f11525b75cf54ca4cb51cd51254cdfbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '06ff78da1d90209b003e079db5b5d354') in 0.0100416 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 52.220597 seconds.
+  path: Assets/Art_Efects/VFX_Player.shadergraph
+  artifactKey: Guid(b10725cb666208849aadee7f80d499a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Efects/VFX_Player.shadergraph using Guid(b10725cb666208849aadee7f80d499a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5455789d7c07afc8702b2582180813af') in 4.3346419 seconds
+Number of updated asset objects reloaded before import = 1Number of asset objects unloaded after import = 8
 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.078781 seconds.
-  path: Assets/Art_Assets
-  artifactKey: Guid(877d2b71ca9c0644ebfb647c783a193d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets using Guid(877d2b71ca9c0644ebfb647c783a193d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c22082e58e19963f5c151bae9d83cd3e') in 0.0009213 seconds
+  Time since last request: 98.598274 seconds.
+  path: Assets/Art_Efects/Texturas
+  artifactKey: Guid(0a1b3a5e818068a47ab855e4e9eb7dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Efects/Texturas using Guid(0a1b3a5e818068a47ab855e4e9eb7dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2987771175060e51bc8dbae4eba95c74') in 0.0012493 seconds
+Number of updated asset objects reloaded before import = 1Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.136192 seconds.
+  path: Assets/Art_Efects/Agua
+  artifactKey: Guid(7f31d7c8664c5da46b93dec0f2b8a285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Efects/Agua using Guid(7f31d7c8664c5da46b93dec0f2b8a285) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a535ddcf98db50ed67644f32b0d4da94') in 0.0010232 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.745864 seconds.
-  path: Assets/Art_Assets/SM_Floor_Canal 1.fbx
-  artifactKey: Guid(7e06d0bd7f18e764881fc58d4b5400ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/SM_Floor_Canal 1.fbx using Guid(7e06d0bd7f18e764881fc58d4b5400ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c9766b5ecea5c6be64bbd5c3b24181f1') in 5.0066581 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+  Time since last request: 15.389586 seconds.
+  path: Assets/Art_Efects/Player
+  artifactKey: Guid(0e52abca586595540a9f6bb5c44d4113) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Efects/Player using Guid(0e52abca586595540a9f6bb5c44d4113) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aae091ef10f7b1e4c5946db0454afbae') in 0.0007194 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 37.626307 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_02.fbx
-  artifactKey: Guid(9db089039b14cd144905dcefc1904187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_02.fbx using Guid(9db089039b14cd144905dcefc1904187) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '34b4f7a9066062ccf999dacbe83a18ea') in 0.1351848 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+  Time since last request: 3.617423 seconds.
+  path: Assets/Art_Efects/Player/M_Player.mat
+  artifactKey: Guid(997942abaebaf654c95d0261bb202ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Efects/Player/M_Player.mat using Guid(997942abaebaf654c95d0261bb202ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9eca6971f4e291288bfec6da1a403eb5') in 0.031169 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_09.fbx
-  artifactKey: Guid(df5cc3c3d8b52e042adbc994969d03c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_09.fbx using Guid(df5cc3c3d8b52e042adbc994969d03c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1d38bf72b2807494f51075fe5c4a3258') in 0.0502166 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+  Time since last request: 435.620501 seconds.
+  path: Assets/Art_Efects/Player/M_Player.mat
+  artifactKey: Guid(997942abaebaf654c95d0261bb202ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Efects/Player/M_Player.mat using Guid(997942abaebaf654c95d0261bb202ce5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd6c178e9d4dd3ab3bc353537c10c2db4') in 0.0364923 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_22.fbx
-  artifactKey: Guid(368f638c341ccbe469109a517cde50a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_22.fbx using Guid(368f638c341ccbe469109a517cde50a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '277c39837a255fca0230bd5d3db70b1f') in 0.0434727 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_05.fbx
-  artifactKey: Guid(e0c5c34ed8697944a8fb43a1d0724398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_05.fbx using Guid(e0c5c34ed8697944a8fb43a1d0724398) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c55db533e79088d6b3bde8ad2fab9d5') in 0.0417199 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_08.fbx
-  artifactKey: Guid(0a7dc50e108eb4d42b66e54b2ce35be7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_08.fbx using Guid(0a7dc50e108eb4d42b66e54b2ce35be7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '709411217d30c89a8795c9531efd4982') in 0.0412959 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000071 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_68.fbx
-  artifactKey: Guid(a66f491142f0f7f4fa6e5534a25ef26c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_68.fbx using Guid(a66f491142f0f7f4fa6e5534a25ef26c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fcaead93fe42323bc669cb77eb17e5ff') in 0.0374879 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_27.fbx
-  artifactKey: Guid(f1f1321830a372a449c57077ccc55c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_27.fbx using Guid(f1f1321830a372a449c57077ccc55c1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '403711091e3da282adffa6a4bf16be6e') in 0.0372938 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_67.fbx
-  artifactKey: Guid(db5ad61a8167213459043e8cbed8ad1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_67.fbx using Guid(db5ad61a8167213459043e8cbed8ad1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '66c9bf067ed02fba53cb667ab08f8675') in 0.0443162 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_16.fbx
-  artifactKey: Guid(c68ffd04d71581043a1a6b4dffa7e231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_16.fbx using Guid(c68ffd04d71581043a1a6b4dffa7e231) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '687519a4a3d1404572fb655bf8dd2706') in 0.0429679 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_64.fbx
-  artifactKey: Guid(f51216eafa2076c4c8823112cc7923da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_64.fbx using Guid(f51216eafa2076c4c8823112cc7923da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '25aa5a692febe7dfb350d48541215df5') in 0.0435249 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_17.fbx
-  artifactKey: Guid(f722047846d5e364bb814a0d88967471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_17.fbx using Guid(f722047846d5e364bb814a0d88967471) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '238f4cd83f53c52b545550d846e1babb') in 0.0384039 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_70.fbx
-  artifactKey: Guid(d6416abf237cd0c4b9b30965aeacc9be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_70.fbx using Guid(d6416abf237cd0c4b9b30965aeacc9be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fc3c1195f0e7239ec616e1f29b3ab6db') in 0.049615 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000080 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_10.fbx
-  artifactKey: Guid(45e2768954669d845a87249ef43d188e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_10.fbx using Guid(45e2768954669d845a87249ef43d188e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '03269b07eedffb25d38d06012e829625') in 0.0456828 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_23.fbx
-  artifactKey: Guid(97dd437f1e2a9704c9fa21e2c3cfb7dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_23.fbx using Guid(97dd437f1e2a9704c9fa21e2c3cfb7dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f4bbd54b9537f5b3d5da664fada97d3c') in 0.0401548 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000061 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_30.fbx
-  artifactKey: Guid(4ab3c99902e20134589be79305d694ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_30.fbx using Guid(4ab3c99902e20134589be79305d694ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '90783b9be50d70878eb1992bfd630d19') in 0.0388814 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_20.fbx
-  artifactKey: Guid(06bcd26e61348e84aae2034721dc4138) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_20.fbx using Guid(06bcd26e61348e84aae2034721dc4138) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e2bb2212fcc9a12d983d75a4fd7a48a') in 0.0377974 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_59.fbx
-  artifactKey: Guid(26690eb0f527166458edd19db5cf325a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_59.fbx using Guid(26690eb0f527166458edd19db5cf325a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9462c84ed4d742cd05f4190ea1c4fdc4') in 0.0466804 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_15.fbx
-  artifactKey: Guid(dbe185cd010ac6a4e85ccf8557b031bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_15.fbx using Guid(dbe185cd010ac6a4e85ccf8557b031bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1ddbb46d895ff9051a76af7c5422bfc8') in 0.0474091 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 10.948037 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_02.fbx
-  artifactKey: Guid(9db089039b14cd144905dcefc1904187) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_02.fbx using Guid(9db089039b14cd144905dcefc1904187) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '90418a8312ec7264f796205ea6a4c718') in 0.0408252 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_09.fbx
-  artifactKey: Guid(df5cc3c3d8b52e042adbc994969d03c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_09.fbx using Guid(df5cc3c3d8b52e042adbc994969d03c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a383129a40d79aa55acf32e2cdb5ed8') in 0.0478716 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_05.fbx
-  artifactKey: Guid(e0c5c34ed8697944a8fb43a1d0724398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_05.fbx using Guid(e0c5c34ed8697944a8fb43a1d0724398) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '12b5e25a1e800cadb18839dd9f0d496e') in 0.0437344 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_25.fbx
-  artifactKey: Guid(5477ec72908e6ac4cbe34b2d3207585e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_25.fbx using Guid(5477ec72908e6ac4cbe34b2d3207585e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '60edf008a3aaf054b74d2ff5a4608dd7') in 0.045032 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_69.fbx
-  artifactKey: Guid(c15f69641ac24de4fa6ac17c55f39355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_69.fbx using Guid(c15f69641ac24de4fa6ac17c55f39355) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '98f45318dcaae84603e77c8031bcf154') in 0.0411578 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000057 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_26.fbx
-  artifactKey: Guid(e35e300504a717e4e887404035a90f3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_26.fbx using Guid(e35e300504a717e4e887404035a90f3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3fd7f735fdf5e2b41c311e5e219a58d7') in 0.047714 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_65.fbx
-  artifactKey: Guid(b6de012cec496b644b02fe0012f8f39b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_65.fbx using Guid(b6de012cec496b644b02fe0012f8f39b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a835c338d3a374472a031868fb827b4b') in 0.0534618 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_12.fbx
-  artifactKey: Guid(4a9bc7098043f07498e3a65862c566e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_12.fbx using Guid(4a9bc7098043f07498e3a65862c566e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '12c4cc1298729c71e29cd34e706c152d') in 0.0534083 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_63.fbx
-  artifactKey: Guid(aeaa3f945071a0a44be70a39ed0942dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_63.fbx using Guid(aeaa3f945071a0a44be70a39ed0942dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '83ebc4c4002ee987066b7f4e560cf2e3') in 0.056187 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Art_Assets/Rocas/stylized_rock_24.fbx
-  artifactKey: Guid(bcc2b5aabba529d47a5b569f3e755913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/stylized_rock_24.fbx using Guid(bcc2b5aabba529d47a5b569f3e755913) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9f036b617939a7b89bce7e1cda6687fe') in 0.0397318 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 39.186437 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 2.png
-  artifactKey: Guid(b4b0c80c7801828488605602cabacb84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 2.png using Guid(b4b0c80c7801828488605602cabacb84) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2275cdef3e601b41c601e2cd831c39c6') in 0.0382242 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 42.png
-  artifactKey: Guid(6cd0f04e99d05794289c0f4fc662d440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 42.png using Guid(6cd0f04e99d05794289c0f4fc662d440) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b047a700dacf304e38a2a20724975acf') in 0.0232406 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 7.png
-  artifactKey: Guid(0d1c0360b5c984d4d82c3db944d6a10f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 7.png using Guid(0d1c0360b5c984d4d82c3db944d6a10f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a8ca9047679a0b1cc311a7ea2298c51') in 0.0234053 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 34.png
-  artifactKey: Guid(1468b750d0ca3624cad58b20b9031550) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 34.png using Guid(1468b750d0ca3624cad58b20b9031550) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0054f7d3ff31d6dff492b6d10818699e') in 0.0243847 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 26.png
-  artifactKey: Guid(6a4c1beb27e342e4a83839f8ac765978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 26.png using Guid(6a4c1beb27e342e4a83839f8ac765978) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dc64efcdabcbcf0387e8799723e730cd') in 0.0246595 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 51.png
-  artifactKey: Guid(20e6b2c3e61c5744c81115a66d30c4eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 51.png using Guid(20e6b2c3e61c5744c81115a66d30c4eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '726bb18d79ddd1f3db1a8b305589130c') in 0.023243 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 44.png
-  artifactKey: Guid(ed9c3a275fb965b47b7dcc9f17cb2361) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 44.png using Guid(ed9c3a275fb965b47b7dcc9f17cb2361) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '68ff13662f9173fed7d7cfaa7fd77015') in 0.0241073 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 21.png
-  artifactKey: Guid(671bec4bec16af54babd5775bcd39a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 21.png using Guid(671bec4bec16af54babd5775bcd39a17) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '52694556c7fb0096f7db1b0f9af3933e') in 0.024164 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 38.png
-  artifactKey: Guid(eb44ef8e8dff71b40a4bd7315d278413) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 38.png using Guid(eb44ef8e8dff71b40a4bd7315d278413) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '65262ced1d9b6fc09f1fca3d8e266e9a') in 0.0221999 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 27.png
-  artifactKey: Guid(7bf70f960772a81469fea323d7f9f06a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 27.png using Guid(7bf70f960772a81469fea323d7f9f06a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec9061ae9b400959ca354c52a2477a20') in 0.0239302 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 30.png
-  artifactKey: Guid(08d949e421a400542ab12753d9a20740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 30.png using Guid(08d949e421a400542ab12753d9a20740) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ae4b460b8d9a7ed7c2b0b6d65fafc372') in 0.023679 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 9.png
-  artifactKey: Guid(d34ee32b538421a4a82160c9cee0c6d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 9.png using Guid(d34ee32b538421a4a82160c9cee0c6d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd07016ceb957fc3c8fd75cb1bb674e70') in 0.0235115 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Art_Assets/Rocas/textures/stylized rock 41.png
-  artifactKey: Guid(dbfbf029f924f6b4789558bc6ba36bf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art_Assets/Rocas/textures/stylized rock 41.png using Guid(dbfbf029f924f6b4789558bc6ba36bf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '235f812187a02fa0f5b8740606037e77') in 0.0270013 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
-
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
