@@ -1,0 +1,440 @@
+Using pre-set license
+Built from '6000.0/release' branch; Version is '6000.0.44f1 (101c91f3a8fb) revision 1055889'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'es' Physical Memory: 16315 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.0.44f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker12
+-projectPath
+C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial 1/ElementsGame
+-logFile
+Logs/AssetImportWorker12.log
+-srvPort
+49452
+-job-worker-count
+5
+-background-job-worker-count
+8
+-gc-helper-count
+1
+Successfully changed project path to: C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial 1/ElementsGame
+C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial 1/ElementsGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [15896]  Target information:
+
+Player connection [15896]  * "[IP] 192.168.0.5 [Port] 0 [Flags] 2 [Guid] 3176461319 [EditorId] 3176461319 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [15896]  * "[IP] 172.16.0.2 [Port] 0 [Flags] 2 [Guid] 3176461319 [EditorId] 3176461319 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [15896] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [15896] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 5
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 4.36 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.44f1 (101c91f3a8fb)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial 1/ElementsGame/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 2060 (ID=0x1f08)
+    Vendor:   NVIDIA
+    VRAM:     5954 MB
+    Driver:   32.0.15.6094
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56616
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006551 seconds.
+- Loaded All Assemblies, in  0.619 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.461 seconds
+Domain Reload Profiling: 1074ms
+	BeginReloadAssembly (235ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (56ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (77ms)
+	LoadAllAssembliesAndSetupDomain (227ms)
+		LoadAssemblies (227ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (222ms)
+			TypeCache.Refresh (221ms)
+				TypeCache.ScanAssembly (203ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (462ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (398ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (31ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (78ms)
+			ProcessInitializeOnLoadAttributes (206ms)
+			ProcessInitializeOnLoadMethodAttributes (76ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.199 seconds
+Refreshing native plugins compatible for Editor in 2.97 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Missing types referenced from component UniversalRenderPipelineGlobalSettings on game object UniversalRenderPipelineGlobalSettings:
+	UnityEngine.Rendering.LightmapSamplingSettings, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.RenderingDebuggerRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionDynamicResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionPersistentResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.VrsRenderPipelineRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.135 seconds
+Domain Reload Profiling: 2321ms
+	BeginReloadAssembly (246ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (63ms)
+	LoadAllAssembliesAndSetupDomain (804ms)
+		LoadAssemblies (560ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (395ms)
+			TypeCache.Refresh (291ms)
+				TypeCache.ScanAssembly (270ms)
+			BuildScriptInfoCaches (83ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1136ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (897ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (7ms)
+			BeforeProcessingInitializeOnLoad (174ms)
+			ProcessInitializeOnLoadAttributes (527ms)
+			ProcessInitializeOnLoadMethodAttributes (174ms)
+			AfterProcessingInitializeOnLoad (12ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.12 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 219 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6223 unused Assets / (4.8 MB). Loaded Objects now: 6930.
+Memory consumption went from 167.0 MB to 162.2 MB.
+Total: 13.960800 ms (FindLiveObjects: 0.843600 ms CreateObjectMapping: 1.508600 ms MarkObjects: 8.000300 ms  DeleteObjects: 3.606600 ms)
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.236 seconds
+Refreshing native plugins compatible for Editor in 2.33 ms, found 3 plugins.
+Missing types referenced from component UniversalRenderPipelineGlobalSettings on game object UniversalRenderPipelineGlobalSettings:
+	UnityEngine.Rendering.LightmapSamplingSettings, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.RenderingDebuggerRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionDynamicResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionPersistentResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.VrsRenderPipelineRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.239 seconds
+Domain Reload Profiling: 2466ms
+	BeginReloadAssembly (307ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (12ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (67ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (57ms)
+	LoadAllAssembliesAndSetupDomain (788ms)
+		LoadAssemblies (659ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (290ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (258ms)
+			ResolveRequiredComponents (20ms)
+	FinalizeReload (1240ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (916ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (9ms)
+			BeforeProcessingInitializeOnLoad (187ms)
+			ProcessInitializeOnLoadAttributes (606ms)
+			ProcessInitializeOnLoadMethodAttributes (93ms)
+			AfterProcessingInitializeOnLoad (17ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (23ms)
+Refreshing native plugins compatible for Editor in 2.77 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6221 unused Assets / (4.5 MB). Loaded Objects now: 6945.
+Memory consumption went from 146.9 MB to 142.4 MB.
+Total: 14.330400 ms (FindLiveObjects: 0.958200 ms CreateObjectMapping: 1.487700 ms MarkObjects: 7.701900 ms  DeleteObjects: 4.180400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.150 seconds
+Refreshing native plugins compatible for Editor in 1.99 ms, found 3 plugins.
+Missing types referenced from component UniversalRenderPipelineGlobalSettings on game object UniversalRenderPipelineGlobalSettings:
+	UnityEngine.Rendering.LightmapSamplingSettings, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.RenderingDebuggerRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionDynamicResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionPersistentResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.VrsRenderPipelineRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.199 seconds
+Domain Reload Profiling: 2339ms
+	BeginReloadAssembly (298ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (65ms)
+	RebuildCommonClasses (57ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (716ms)
+		LoadAssemblies (585ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (289ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (259ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1199ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (882ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (190ms)
+			ProcessInitializeOnLoadAttributes (573ms)
+			ProcessInitializeOnLoadMethodAttributes (94ms)
+			AfterProcessingInitializeOnLoad (15ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (23ms)
+Refreshing native plugins compatible for Editor in 2.85 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6221 unused Assets / (4.6 MB). Loaded Objects now: 6947.
+Memory consumption went from 145.2 MB to 140.6 MB.
+Total: 15.692600 ms (FindLiveObjects: 1.031400 ms CreateObjectMapping: 1.249900 ms MarkObjects: 8.786000 ms  DeleteObjects: 4.624000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.176 seconds
+Refreshing native plugins compatible for Editor in 1.92 ms, found 3 plugins.
+Missing types referenced from component UniversalRenderPipelineGlobalSettings on game object UniversalRenderPipelineGlobalSettings:
+	UnityEngine.Rendering.LightmapSamplingSettings, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.RenderingDebuggerRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionDynamicResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionPersistentResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.VrsRenderPipelineRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.212 seconds
+Domain Reload Profiling: 2379ms
+	BeginReloadAssembly (321ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (67ms)
+	RebuildCommonClasses (59ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (51ms)
+	LoadAllAssembliesAndSetupDomain (714ms)
+		LoadAssemblies (593ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (287ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (259ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1213ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (916ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (186ms)
+			ProcessInitializeOnLoadAttributes (595ms)
+			ProcessInitializeOnLoadMethodAttributes (109ms)
+			AfterProcessingInitializeOnLoad (16ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (23ms)
+Refreshing native plugins compatible for Editor in 2.65 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 15 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6221 unused Assets / (3.9 MB). Loaded Objects now: 6949.
+Memory consumption went from 145.2 MB to 141.3 MB.
+Total: 18.392600 ms (FindLiveObjects: 1.412900 ms CreateObjectMapping: 2.252900 ms MarkObjects: 9.753700 ms  DeleteObjects: 4.971000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 49937.981052 seconds.
+  path: Assets/Art_Character/Ch16_1002_Normal.png
+  artifactKey: Guid(be84ffc1e47af3c428352e175ec3ae0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Character/Ch16_1002_Normal.png using Guid(be84ffc1e47af3c428352e175ec3ae0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e3d7eced0a5e53e5ef305970e75578b') in 0.2007487 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 38.669803 seconds.
+  path: Assets/Art_Enemys/EnemyDemon/Demon.mat
+  artifactKey: Guid(0acaa42b4b458004693ab8fc6bbed3b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Enemys/EnemyDemon/Demon.mat using Guid(0acaa42b4b458004693ab8fc6bbed3b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a18e6014a81e8c24ee0f004d16259579') in 5.0001458 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 39.235971 seconds.
+  path: Assets/Art_Enemys/EnemyDemon/Demon.mat
+  artifactKey: Guid(0acaa42b4b458004693ab8fc6bbed3b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Enemys/EnemyDemon/Demon.mat using Guid(0acaa42b4b458004693ab8fc6bbed3b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dabacc1e365172bd7b9cda5f9bae0d1b') in 0.0640656 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Import Request.
+  Time since last request: 15.886100 seconds.
+  path: Assets/Art_Enemys/EnemyDemon/Demon.mat
+  artifactKey: Guid(0acaa42b4b458004693ab8fc6bbed3b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Art_Enemys/EnemyDemon/Demon.mat using Guid(0acaa42b4b458004693ab8fc6bbed3b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cfe3a7d76bf34179e65ac558e70667ea') in 0.0503246 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.223 seconds
+Refreshing native plugins compatible for Editor in 2.06 ms, found 3 plugins.
+Missing types referenced from component UniversalRenderPipelineGlobalSettings on game object UniversalRenderPipelineGlobalSettings:
+	UnityEngine.Rendering.LightmapSamplingSettings, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.RenderingDebuggerRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionDynamicResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionPersistentResources, Unity.RenderPipelines.Universal.Runtime (1 object)
+	UnityEngine.Rendering.VrsRenderPipelineRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.230 seconds
+Domain Reload Profiling: 2443ms
+	BeginReloadAssembly (338ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (31ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (76ms)
+	RebuildCommonClasses (59ms)
+	RebuildNativeTypeToScriptingClass (21ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (745ms)
+		LoadAssemblies (581ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (326ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (298ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1231ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (916ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (204ms)
+			ProcessInitializeOnLoadAttributes (581ms)
+			ProcessInitializeOnLoadMethodAttributes (105ms)
+			AfterProcessingInitializeOnLoad (15ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (28ms)
+Refreshing native plugins compatible for Editor in 2.98 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6221 unused Assets / (4.5 MB). Loaded Objects now: 7021.
+Memory consumption went from 155.9 MB to 151.4 MB.
+Total: 17.959400 ms (FindLiveObjects: 1.246400 ms CreateObjectMapping: 2.383300 ms MarkObjects: 9.260100 ms  DeleteObjects: 5.067300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
