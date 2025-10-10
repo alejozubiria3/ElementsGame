@@ -150,10 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0c783a037dcc04f920ab3d8ea435fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 6
+  lifetime: 1
   hitMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  lockToXZ: 1
 --- !u!1 &6527638959548682985
 GameObject:
   m_ObjectHideFlags: 0

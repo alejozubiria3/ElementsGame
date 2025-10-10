@@ -8,22 +8,27 @@ public class Flecha : MonoBehaviour
     [Header("Máscara de impacto (solo para modo no-homing o si ignoreObstacles=false)")]
     public LayerMask hitMask = ~0;
 
-    // Runtime
+    [Header("Movimiento")]
+    [Tooltip("Si está activado, la flecha solo se mueve en el plano XZ (soluciona que 'se vaya para arriba').")]
+    public bool lockToXZ = true;
+
+    
     Rigidbody _rb;
     Collider  _col;
 
     Transform _shooter;
-    Transform _target;          
+    Transform _target;
     int _damage;
     bool _launched;
 
-    // homing
+    
     bool  _homing;
     bool  _ignoreObstacles;
     float _speed;
-    float _rotateSpeedRad;      
-    float _hitRadius;           
+    float _rotateSpeedRad;
+    float _hitRadius;
     float _targetHeightOffset = 1.0f;
+    float _yLock; 
 
     void Awake()
     {
@@ -42,10 +47,16 @@ public class Flecha : MonoBehaviour
 
         if (_rb)
         {
-            _rb.isKinematic  = false;
-            _rb.useGravity   = false;
-            _rb.linearVelocity     = velocity;
+            _rb.isKinematic = false;
+            _rb.useGravity  = false;
+#if UNITY_6000_0_OR_NEWER
+            _rb.linearVelocity = velocity;
+#else
+            _rb.velocity = velocity;
+#endif
         }
+
+        if (lockToXZ) _yLock = transform.position.y;
 
         _launched = true;
         if (lifetime > 0f) Destroy(gameObject, lifetime);
@@ -71,10 +82,16 @@ public class Flecha : MonoBehaviour
         {
             _rb.isKinematic = false;
             _rb.useGravity  = false;
-            _rb.linearVelocity    = transform.forward * _speed;
+#if UNITY_6000_0_OR_NEWER
+            _rb.linearVelocity = transform.forward * _speed;
+#else
+            _rb.velocity = transform.forward * _speed;
+#endif
         }
 
         if (_col && _ignoreObstacles) _col.isTrigger = true;
+
+        if (lockToXZ) _yLock = transform.position.y;
 
         _launched = true;
         if (lifetime > 0f) Destroy(gameObject, lifetime);
@@ -98,9 +115,13 @@ public class Flecha : MonoBehaviour
         {
             if (_target == null) { Destroy(gameObject); return; }
 
+            
             Vector3 aimPos = _target.position + Vector3.up * _targetHeightOffset;
+            if (lockToXZ)
+                aimPos.y = transform.position.y;   
+
             Vector3 desired = (aimPos - transform.position);
-            float  dist = desired.magnitude;
+            float dist = desired.magnitude;
             if (dist <= _hitRadius)
             {
                 HitPlayer(_target);
@@ -108,13 +129,28 @@ public class Flecha : MonoBehaviour
             }
 
             desired.Normalize();
+            if (lockToXZ) desired.y = 0f;          
 
             Vector3 newDir = Vector3.RotateTowards(transform.forward, desired,
                                _rotateSpeedRad * Time.fixedDeltaTime, 999f);
+            if (lockToXZ) newDir.y = 0f;
+
             transform.rotation = Quaternion.LookRotation(newDir);
 
+#if UNITY_6000_0_OR_NEWER
             if (_rb) _rb.linearVelocity = newDir * _speed;
             else     transform.position += newDir * _speed * Time.fixedDeltaTime;
+#else
+            if (_rb) _rb.velocity = newDir * _speed;
+            else     transform.position += newDir * _speed * Time.fixedDeltaTime;
+#endif
+
+            
+            if (lockToXZ)
+            {
+                if (_rb) _rb.position = new Vector3(_rb.position.x, _yLock, _rb.position.z);
+                else     transform.position = new Vector3(transform.position.x, _yLock, transform.position.z);
+            }
         }
     }
 
@@ -131,17 +167,19 @@ public class Flecha : MonoBehaviour
         if (_homing && _ignoreObstacles)
         {
             if (_target && other.transform.IsChildOf(_target))
-                { HitPlayer(_target); }
-            return; 
+            {
+                HitPlayer(_target);
+            }
+            return;
         }
 
+        
         if (hitMask != ~0)
         {
             int m = 1 << other.gameObject.layer;
             if ((hitMask.value & m) == 0) return;
         }
 
-        
         var ph = other.GetComponentInParent<PlayerSimpleHealth>();
         if (ph) { ph.TakeDamage(_damage); Destroy(gameObject); return; }
 

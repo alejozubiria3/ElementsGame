@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  stopDistance: 6
+  stopDistance: 10
   stopTolerance: 0.25
   attackRange: 15
   damage: 20
@@ -783,7 +783,7 @@ MonoBehaviour:
   requireLineOfSight: 1
   losMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   maxHealth: 30
   aggroHoldSeconds: 8
   reacquireInterval: 0.4

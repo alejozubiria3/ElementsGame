@@ -28,7 +28,7 @@ public class Targetable : MonoBehaviour
     public bool forceMaterialOverride = true;
     public bool debugLog = false;
 
-    // Shader props comunes
+    
     static readonly int ColorID         = Shader.PropertyToID("_Color");
     static readonly int BaseColorID     = Shader.PropertyToID("_BaseColor");
     static readonly int EmissionColorID = Shader.PropertyToID("_EmissionColor");
@@ -40,7 +40,7 @@ public class Targetable : MonoBehaviour
     Vector3 _baseScale;
     Camera _cam;
 
-    // Para overlay
+    
     readonly Dictionary<Renderer, Material[]> _originalMats = new();
 
     void Awake()
@@ -52,7 +52,7 @@ public class Targetable : MonoBehaviour
         _baseScale = transform.localScale;
         _cam = Camera.main;
 
-        // Cacheo materiales originales
+        
         _originalMats.Clear();
         foreach (var r in renderers)
             if (r && !_originalMats.ContainsKey(r))
@@ -115,7 +115,7 @@ public class Targetable : MonoBehaviour
         {
             if (!r) continue;
 
-            // PropertyBlock (no toca materiales compartidos)
+           
             r.GetPropertyBlock(_mpb);
             if (on)
             {
@@ -131,10 +131,10 @@ public class Targetable : MonoBehaviour
             }
             r.SetPropertyBlock(_mpb);
 
-            // Fallback: override de material (por si el shader ignora MPB)
+            
             if (forceMaterialOverride)
             {
-                var m = r.material; // instancia
+                var m = r.material; 
                 if (on)
                 {
                     if (m.HasProperty(ColorID))     m.SetColor(ColorID, tintColor);
@@ -168,7 +168,7 @@ public class Targetable : MonoBehaviour
             if (!r) continue;
             var baseArray = _originalMats.TryGetValue(r, out var mats) ? mats : r.sharedMaterials;
 
-            // Evita duplicar overlay si ya está
+            
             bool alreadyHas = false;
             foreach (var mm in r.sharedMaterials)
                 if (mm == overlayMat) { alreadyHas = true; break; }
@@ -188,14 +188,14 @@ public class Targetable : MonoBehaviour
         {
             if (!r) continue;
 
-            // Si tengo cache de originales, restauro
+            
             if (_originalMats.TryGetValue(r, out var mats))
             {
                 r.sharedMaterials = mats;
                 continue;
             }
 
-            // Si no, saco solo el overlay
+            
             var current = new List<Material>(r.sharedMaterials);
             current.RemoveAll(m => m == overlayMat);
             r.sharedMaterials = current.ToArray();

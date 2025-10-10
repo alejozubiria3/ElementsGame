@@ -10,12 +10,12 @@ public class SelectionRing : MonoBehaviour
     public int segments = 64;
 
     [Header("Colocación")]
-    public Transform center;       // si lo dejas vacío usa el padre
-    public float yOffset = 0.02f;  // pequeño levantado para evitar z-fighting
+    public Transform center;       
+    public float yOffset = 0.02f;  
 
     [Header("Pulse (opcional)")]
     public bool pulse = true;
-    public float pulseAmount = 0.06f;  // cuánto varía el radio
+    public float pulseAmount = 0.06f;  
     public float pulseSpeed  = 4f;
 
     LineRenderer lr;
@@ -31,34 +31,34 @@ public class SelectionRing : MonoBehaviour
         lr.positionCount = Mathf.Max(segments, 3);
         lr.startWidth = lr.endWidth = width;
 
-        // Material simple transparente
+        
         if (!lr.sharedMaterial)
         {
             var mat = new Material(Shader.Find("Sprites/Default"));
-            mat.renderQueue = 3000; // Transparent
+            mat.renderQueue = 3000; 
             lr.material = mat;
         }
         lr.startColor = lr.endColor = color;
 
         baseRadius = radius;
-        gameObject.SetActive(false); // el aro inicia apagado
+        gameObject.SetActive(false); 
     }
 
     void Update()
     {
         if (!center) return;
 
-        // Posicionar el aro en el suelo bajo el enemigo
+        
         Vector3 c = center.position;
         c.y += yOffset;
         transform.position = c;
 
-        // Radio con pulso
+        
         float r = baseRadius;
         if (pulse)
             r += Mathf.Sin(Time.time * pulseSpeed) * pulseAmount;
 
-        // Recalcular círculo en XZ
+        
         int n = Mathf.Max(segments, 3);
         float step = Mathf.PI * 2f / n;
         for (int i = 0; i < n; i++)
