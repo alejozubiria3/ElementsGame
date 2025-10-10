@@ -4,80 +4,123 @@ using UnityEngine;
 public class EnemyRanged : MonoBehaviour
 {
     [Header("Movimiento")]
-    [Tooltip("Velocidad al perseguir")]
     public float speed = 3f;
-
-    [Tooltip("Distancia a la que el enemigo se DETIENE para disparar")]
     public float stopDistance = 8f;
-
-    [Tooltip("Margen para evitar 'bombeo' adelante/atrás")]
     public float stopTolerance = 0.25f;
 
-    [Header("Ataque a distancia")]
-    [Tooltip("Debe ser <= stopDistance para disparar al frenarse")]
-    public float attackRange = 8f;
-
-    [Tooltip("Daño que aplicará la flecha al Player")]
+    [Header("Ataque")]
+    public float attackRange = 8f; // <= stopDistance
     public int damage = 10;
-
-    [Tooltip("Tiempo entre disparos")]
     public float attackCooldown = 1.2f;
-    private float lastAttackTime;
+    float lastAttackTime;
 
     [Header("Proyectil")]
-    [Tooltip("Prefab de la flecha (con script Flecha.cs)")]
     public Flecha flechaPrefab;
-
-    [Tooltip("Punto desde donde sale la flecha")]
     public Transform shootPoint;
-
-    [Tooltip("Velocidad inicial de la flecha")]
     public float projectileSpeed = 18f;
 
-    [Header("Línea de visión (opcional)")]
+    [Header("Detección")]
+    public string playerTag = "Player";
+    public float detectionRadius = 14f;   // radio para empezar a perseguir
     public bool requireLineOfSight = true;
+    public LayerMask losMask = ~0;
 
-    [Tooltip("Capas que bloquean la visión (paredes, etc.)")]
-    public LayerMask losMask = ~0; 
-    
-    private Transform player;
-    private bool isChasing;
-    private Rigidbody rb;
+    [Header("Vida / Agro")]
+    public int maxHealth = 30;
+    int currentHealth;
+    [Tooltip("<= 0 = infinito")]
+    public float aggroHoldSeconds = 8f;
+
+    [Header("Re-adquisición / Fallback")]
+    public float reacquireInterval = 0.4f;
+    public float proximityScanRadius = 60f;
+    public LayerMask playerLayer = ~0;
+
+    [Header("Colisión con Player")]
+    [Tooltip("Opcional: asigná a mano tus colliders de CUERPO (no-trigger). Si lo dejás vacío, se detectan solos.")]
+    public Collider[] bodyCollidersManual;
+
+    [Header("Debug")]
+    public bool debugLogs = false;
+
+    // Runtime
+    Transform player;
+    bool isChasing;
+    bool forcedAggro;
+    float aggroUntilTime;
+    float _nextReacquireTime;
+    Rigidbody rb;
+    Collider[] myBodyCols; // colliders de CUERPO (no-trigger)
 
     void Awake()
     {
+        currentHealth = maxHealth;
+
         rb = GetComponent<Rigidbody>();
-        rb.isKinematic = true;      
+        rb.isKinematic = true;          // evita empujones por física
         rb.detectCollisions = true;
 
-        
-        if (attackRange > stopDistance)
-            attackRange = stopDistance;
+        if (attackRange > stopDistance) attackRange = stopDistance;
+
+        // colliders de CUERPO
+        if (bodyCollidersManual != null && bodyCollidersManual.Length > 0)
+        {
+            myBodyCols = bodyCollidersManual;
+        }
+        else
+        {
+            var all = GetComponentsInChildren<Collider>(true);
+            int bodyCount = 0;
+            foreach (var c in all) if (c && !c.isTrigger) bodyCount++;
+            myBodyCols = new Collider[bodyCount];
+            int i = 0;
+            foreach (var c in all) if (c && !c.isTrigger) myBodyCols[i++] = c;
+        }
+
+        if (debugLogs) Debug.Log($"[EnemyRanged] Awake: isKin={rb.isKinematic}, bodyCols={myBodyCols?.Length}");
+
+        var pgo = GameObject.FindGameObjectWithTag(playerTag);
+        if (pgo) player = pgo.transform;
     }
 
     void Update()
     {
+        // adquirir objetivo por radio si todavía no estoy persiguiendo
+        if (!isChasing) AcquireByRadius();
+
+        // expira agro forzado
+        if (forcedAggro && aggroHoldSeconds > 0f && Time.time >= aggroUntilTime)
+            forcedAggro = false;
+
+        // re-adquirir si perdimos ref
+        if ((isChasing || forcedAggro) && !player && Time.time >= _nextReacquireTime)
+        {
+            _nextReacquireTime = Time.time + reacquireInterval;
+            TryResolvePlayerReference(true);
+        }
+
         if (!isChasing || !player) return;
 
         Vector3 toPlayer = player.position - transform.position;
         toPlayer.y = 0f;
         float dist = toPlayer.magnitude;
 
-       
+        // mirar al player siempre
         if (dist > 0.001f)
         {
             Quaternion look = Quaternion.LookRotation(toPlayer);
             transform.rotation = Quaternion.Slerp(transform.rotation, look, 12f * Time.deltaTime);
         }
 
-        
+        // ======== CAMBIO: NO retroceder nunca =========
+        // Solo avanzar si está FUERA del rango ideal. Dentro del rango → quedarse quieto.
         if (dist > stopDistance + stopTolerance)
         {
-            Vector3 dir = toPlayer.normalized;
-            transform.position += dir * speed * Time.deltaTime;
+            transform.position += toPlayer.normalized * speed * Time.deltaTime;
         }
+        // (nada cuando dist <= stopDistance + tol)
 
-       
+        // disparar si está en rango
         if (dist <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
             if (!requireLineOfSight || HasLineOfSight())
@@ -88,59 +131,155 @@ public class EnemyRanged : MonoBehaviour
         }
     }
 
-    private bool HasLineOfSight()
+    void AcquireByRadius()
     {
+        if (!player)
+        {
+            var pgo = GameObject.FindGameObjectWithTag(playerTag);
+            if (pgo) player = pgo.transform;
+        }
+        if (!player) return;
+
+        Vector3 flat = player.position - transform.position; flat.y = 0f;
+        if (flat.sqrMagnitude <= detectionRadius * detectionRadius)
+        {
+            if (!requireLineOfSight || HasLineOfSight())
+                StartChaseWithIgnore(player);
+        }
+    }
+
+    bool HasLineOfSight()
+    {
+        if (!player) return false;
         Vector3 origin = shootPoint ? shootPoint.position : transform.position + Vector3.up * 1.2f;
         Vector3 target = player.position + Vector3.up * 1.0f;
-        Vector3 dir = (target - origin).normalized;
-        float dist = Vector3.Distance(origin, target);
+        Vector3 dir = target - origin;
+        float dist = dir.magnitude;
 
-       
-        if (Physics.Raycast(origin, dir, out RaycastHit hit, dist, losMask, QueryTriggerInteraction.Ignore))
-        {
-            if (!hit.collider.CompareTag("Player"))
-                return false;
-        }
+        if (Physics.Raycast(origin, dir.normalized, out RaycastHit hit, dist, losMask, QueryTriggerInteraction.Ignore))
+            return hit.collider.CompareTag(playerTag);
         return true;
     }
+void Shoot()
+{
+    if (!flechaPrefab || !player) return;
 
-    private void Shoot()
+    Vector3 origin = shootPoint ? shootPoint.position : transform.position + Vector3.up * 1.2f;
+    Vector3 target = player.position + Vector3.up * 1.0f;
+    Vector3 dir    = (target - origin).normalized;
+
+    // ⬇️ pequeño offset hacia adelante para NO spawnear dentro del propio collider
+    const float spawnOffset = 0.35f;
+    Vector3 spawnPos = origin + dir * spawnOffset;
+
+    var flecha = Instantiate(flechaPrefab, spawnPos, Quaternion.LookRotation(dir));
+    // pasa 'this.transform' como shooter para ignorar colisión con el tirador
+    flecha.Init(dir * projectileSpeed, damage, this.transform);
+}
+    // ===== API para triggers/otros =====
+    public void StartChase(Collider playerCol)
     {
-        if (!flechaPrefab) return;
-
-        
-        Vector3 origin = shootPoint ? shootPoint.position : transform.position + Vector3.up * 1.2f;
-        Vector3 target = player.position + Vector3.up * 1.0f;
-        Vector3 dir = (target - origin).normalized;
-
-       
-        Flecha flecha = Instantiate(flechaPrefab, origin, Quaternion.LookRotation(dir));
-        flecha.Init(dir * projectileSpeed, damage);
+        StartChaseWithIgnore(playerCol ? playerCol.transform : null);
     }
 
-    
-    void OnTriggerEnter(Collider other)
+    public void StopChase(Collider playerCol)
     {
-        if (other.CompareTag("Player"))
-        {
-            player = other.transform;
-            isChasing = true;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
+        EnsureIgnoreCollisionWithPlayer(false);
+        if (!forcedAggro)
         {
             isChasing = false;
             player = null;
         }
     }
 
-    
+    void StartChaseWithIgnore(Transform p)
+    {
+        if (!p) return;
+        player = p;
+        isChasing = true;
+        EnsureIgnoreCollisionWithPlayer(true);
+        if (debugLogs) Debug.Log("[EnemyRanged] StartChase");
+    }
+
+    void EnsureIgnoreCollisionWithPlayer(bool ignore)
+    {
+        if (!player || myBodyCols == null || myBodyCols.Length == 0) return;
+
+        var playerCols = player.GetComponentsInChildren<Collider>(true);
+        foreach (var ec in myBodyCols)
+        {
+            if (!ec) continue;
+            foreach (var pc in playerCols)
+            {
+                if (!pc || pc.isTrigger) continue;
+                Physics.IgnoreCollision(ec, pc, ignore);
+            }
+        }
+    }
+
+    // ===== Daño / Agro =====
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        ForceAggro(null);
+        if (currentHealth <= 0) Die();
+    }
+
+    public void TakeDamageFrom(int amount, Transform attacker)
+    {
+        currentHealth -= amount;
+        ForceAggro(attacker);
+        if (currentHealth <= 0) Die();
+    }
+
+    public void ForceAggro(Transform attackerOrNull)
+    {
+        if (attackerOrNull) player = attackerOrNull;
+        if (!player)
+        {
+            var pgo = GameObject.FindGameObjectWithTag(playerTag);
+            if (pgo) player = pgo.transform;
+        }
+
+        isChasing = true;
+        forcedAggro = true;
+        aggroUntilTime = (aggroHoldSeconds > 0f) ? Time.time + aggroHoldSeconds : Mathf.Infinity;
+        EnsureIgnoreCollisionWithPlayer(true);
+    }
+
+    void TryResolvePlayerReference(bool aggressive = false)
+    {
+        if (!player)
+        {
+            var pGO = GameObject.FindGameObjectWithTag(playerTag);
+            if (pGO) player = pGO.transform;
+        }
+        if (!player && aggressive)
+        {
+            var hits = Physics.OverlapSphere(transform.position, proximityScanRadius, playerLayer, QueryTriggerInteraction.Ignore);
+            foreach (var h in hits)
+            {
+                if (h.CompareTag(playerTag) || h.GetComponentInParent<PlayerSimpleHealth>() != null)
+                {
+                    player = h.transform;
+                    isChasing = true;
+                    EnsureIgnoreCollisionWithPlayer(true);
+                    break;
+                }
+            }
+        }
+    }
+
+    void Die()
+    {
+        if (debugLogs) Debug.Log("[EnemyRanged] Die()");
+        Destroy(gameObject);
+    }
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan; Gizmos.DrawWireSphere(transform.position, stopDistance);
         Gizmos.color = Color.red;  Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.color = Color.yellow; Gizmos.DrawWireSphere(transform.position, detectionRadius);
     }
 }

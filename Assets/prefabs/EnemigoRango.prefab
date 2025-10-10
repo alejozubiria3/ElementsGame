@@ -127,7 +127,7 @@ Transform:
   m_GameObject: {fileID: 6795802328751474346}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: -0.1, z: 0.03}
+  m_LocalPosition: {x: -0.18, y: 1.61, z: 0.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -350,6 +350,9 @@ GameObject:
   - component: {fileID: 5063736342584563355}
   - component: {fileID: 8367144709070863006}
   - component: {fileID: 3764214035128817200}
+  - component: {fileID: 8575436405011956249}
+  - component: {fileID: 6389551644113851659}
+  - component: {fileID: 9172328297778879826}
   m_Layer: 0
   m_Name: EnemigoRango
   m_TagString: Enemy
@@ -447,10 +450,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.4713707
-  m_Height: 9.406792
+  m_Radius: 5.1745296
+  m_Height: 11.879183
   m_Direction: 1
-  m_Center: {x: 0, y: 2.4522743, z: 0.23799515}
+  m_Center: {x: -0.29316187, y: 3.68847, z: 1.5618739}
 --- !u!65 &951366412538090592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -553,18 +556,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  stopDistance: 8
+  stopDistance: 6
   stopTolerance: 0.25
-  attackRange: 8
-  damage: 10
-  attackCooldown: 1.2
+  attackRange: 10
+  damage: 20
+  attackCooldown: 2
   flechaPrefab: {fileID: 8683341266141004053, guid: 3512034b82ee8814082412ad1aacbcf0, type: 3}
   shootPoint: {fileID: 6707491603561692389}
   projectileSpeed: 18
+  playerTag: Player
+  detectionRadius: 14
   requireLineOfSight: 1
   losMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  maxHealth: 30
+  aggroHoldSeconds: 8
+  reacquireInterval: 0.4
+  proximityScanRadius: 60
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  bodyCollidersManual: []
+  debugLogs: 1
 --- !u!114 &3764214035128817200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,6 +592,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredTag: Enemy
+--- !u!114 &8575436405011956249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151446815763761530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc192d63fa1b65479ec4a36eeff49cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  snapUp: 50
+  snapDown: 200
+  extraY: 0.05
+  maxSlope: 55
+--- !u!114 &6389551644113851659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151446815763761530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce5311c01ebb1c4aa501adaa00257aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 8367144709070863006}
+  playerTag: Player
+--- !u!135 &9172328297778879826
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151446815763761530}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 8
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7600214855686756186
 PrefabInstance:
   m_ObjectHideFlags: 0

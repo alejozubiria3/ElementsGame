@@ -1,54 +1,79 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody), typeof(Collider))]
 public class Flecha : MonoBehaviour
 {
-    [Header("Ajustes")]
-    public float lifeTime = 6f;       // Tiempo antes de autodestruirse si no pega
-    public bool destroyOnAnyHit = true;
+    [Header("Setup")]
+    public float lifetime = 6f;
+    public LayerMask hitMask = ~0;
 
-    private Rigidbody rb;
-    private int damage;
+    Rigidbody _rb;
+    Collider _myCol;
+    int _damage;
+    Transform _shooter;
+    bool _launched;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.isKinematic = false;                // para que se mueva con físicas
-        rb.useGravity = false;                 // que no caiga
-        rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
-        rb.interpolation = RigidbodyInterpolation.Interpolate;
-
-        // Asegurarnos que el collider NO sea trigger
-        Collider col = GetComponent<Collider>();
-        col.isTrigger = false;
+        _rb = GetComponent<Rigidbody>();
+        _myCol = GetComponent<Collider>();
+        if (_rb) _rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
     }
 
-    /// <summary>
-    /// Inicializa la flecha con velocidad y daño.
-    /// </summary>
-    public void Init(Vector3 initialVelocity, int damageAmount)
+    public void Init(Vector3 velocity, int damage, Transform shooter = null)
     {
-        damage = damageAmount;
-        rb.linearVelocity = initialVelocity;
-        Destroy(gameObject, lifeTime);
-    }
+        _damage  = damage;
+        _shooter = shooter;
 
-    void OnCollisionEnter(Collision collision)
-    {
-        // Si choca con el Player → daño
-        if (collision.collider.CompareTag("Player"))
+        // ⬇️ Ignorar colisión con TODOS los colliders del tirador
+        if (_myCol && _shooter)
         {
-            var ph = collision.collider.GetComponent<PlayerSimpleHealth>() 
-                     ?? collision.collider.GetComponentInParent<PlayerSimpleHealth>();
-            if (ph != null && !ph.isDead)
+            var shooterCols = _shooter.GetComponentsInChildren<Collider>(true);
+            foreach (var sc in shooterCols)
             {
-                ph.TakeDamage(damage);
+                if (!sc) continue;
+                Physics.IgnoreCollision(_myCol, sc, true);
             }
         }
 
-        if (destroyOnAnyHit)
+        if (_rb)
         {
-            Destroy(gameObject);
+            _rb.isKinematic = false;
+            _rb.linearVelocity = velocity;
         }
+
+        _launched = true;
+        if (lifetime > 0f) Destroy(gameObject, lifetime);
+    }
+
+    void OnTriggerEnter(Collider other)  { TryHit(other); }
+    void OnCollisionEnter(Collision c)   { if (c != null && c.collider) TryHit(c.collider); }
+
+    void TryHit(Collider other)
+    {
+        if (!_launched || !other) return;
+
+        // no pegarle al que disparó ni a sus hijos
+        if (_shooter && other.transform.IsChildOf(_shooter)) return;
+
+        // filtrar por máscara si la usás
+        if (hitMask != ~0)
+        {
+            int m = 1 << other.gameObject.layer;
+            if ((hitMask.value & m) == 0) return;
+        }
+
+        // Player
+        var ph = other.GetComponentInParent<PlayerSimpleHealth>();
+        if (ph) { ph.TakeDamage(_damage); Destroy(gameObject); return; }
+
+        // Enemigos (por si reutilizás la flecha para el jugador)
+        var em = other.GetComponentInParent<EnemyMelee>();
+        if (em) { em.TakeDamageFrom(_damage, _shooter ? _shooter : transform); Destroy(gameObject); return; }
+
+        var er = other.GetComponentInParent<EnemyRanged>();
+        if (er) { er.TakeDamageFrom(_damage, _shooter ? _shooter : transform); Destroy(gameObject); return; }
+
+        // cualquier otra cosa sólida
+        if (!other.isTrigger) Destroy(gameObject);
     }
 }
