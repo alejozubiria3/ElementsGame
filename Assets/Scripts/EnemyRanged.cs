@@ -9,7 +9,7 @@ public class EnemyRanged : MonoBehaviour
     public float stopTolerance = 0.25f;
 
     [Header("Ataque")]
-    public float attackRange = 8f; // <= stopDistance
+    public float attackRange = 8f; 
     public int damage = 10;
     public float attackCooldown = 1.2f;
     float lastAttackTime;
@@ -21,7 +21,7 @@ public class EnemyRanged : MonoBehaviour
 
     [Header("Detección")]
     public string playerTag = "Player";
-    public float detectionRadius = 14f;   // radio para empezar a perseguir
+    public float detectionRadius = 14f;   
     public bool requireLineOfSight = true;
     public LayerMask losMask = ~0;
 
@@ -50,19 +50,18 @@ public class EnemyRanged : MonoBehaviour
     float aggroUntilTime;
     float _nextReacquireTime;
     Rigidbody rb;
-    Collider[] myBodyCols; // colliders de CUERPO (no-trigger)
+    Collider[] myBodyCols; 
 
     void Awake()
     {
         currentHealth = maxHealth;
 
         rb = GetComponent<Rigidbody>();
-        rb.isKinematic = true;          // evita empujones por física
+        rb.isKinematic = true;          
         rb.detectCollisions = true;
 
         if (attackRange > stopDistance) attackRange = stopDistance;
 
-        // colliders de CUERPO
         if (bodyCollidersManual != null && bodyCollidersManual.Length > 0)
         {
             myBodyCols = bodyCollidersManual;
@@ -85,14 +84,11 @@ public class EnemyRanged : MonoBehaviour
 
     void Update()
     {
-        // adquirir objetivo por radio si todavía no estoy persiguiendo
         if (!isChasing) AcquireByRadius();
 
-        // expira agro forzado
         if (forcedAggro && aggroHoldSeconds > 0f && Time.time >= aggroUntilTime)
             forcedAggro = false;
 
-        // re-adquirir si perdimos ref
         if ((isChasing || forcedAggro) && !player && Time.time >= _nextReacquireTime)
         {
             _nextReacquireTime = Time.time + reacquireInterval;
@@ -105,22 +101,17 @@ public class EnemyRanged : MonoBehaviour
         toPlayer.y = 0f;
         float dist = toPlayer.magnitude;
 
-        // mirar al player siempre
         if (dist > 0.001f)
         {
             Quaternion look = Quaternion.LookRotation(toPlayer);
             transform.rotation = Quaternion.Slerp(transform.rotation, look, 12f * Time.deltaTime);
         }
 
-        // ======== CAMBIO: NO retroceder nunca =========
-        // Solo avanzar si está FUERA del rango ideal. Dentro del rango → quedarse quieto.
         if (dist > stopDistance + stopTolerance)
         {
             transform.position += toPlayer.normalized * speed * Time.deltaTime;
         }
-        // (nada cuando dist <= stopDistance + tol)
 
-        // disparar si está en rango
         if (dist <= attackRange && Time.time >= lastAttackTime + attackCooldown)
         {
             if (!requireLineOfSight || HasLineOfSight())
@@ -168,15 +159,12 @@ void Shoot()
     Vector3 target = player.position + Vector3.up * 1.0f;
     Vector3 dir    = (target - origin).normalized;
 
-    // ⬇️ pequeño offset hacia adelante para NO spawnear dentro del propio collider
     const float spawnOffset = 0.35f;
     Vector3 spawnPos = origin + dir * spawnOffset;
 
     var flecha = Instantiate(flechaPrefab, spawnPos, Quaternion.LookRotation(dir));
-    // pasa 'this.transform' como shooter para ignorar colisión con el tirador
     flecha.Init(dir * projectileSpeed, damage, this.transform);
 }
-    // ===== API para triggers/otros =====
     public void StartChase(Collider playerCol)
     {
         StartChaseWithIgnore(playerCol ? playerCol.transform : null);
@@ -217,7 +205,6 @@ void Shoot()
         }
     }
 
-    // ===== Daño / Agro =====
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
