@@ -94,6 +94,7 @@
     <Compile Include="Assets\Scripts\poderes\BasicProjectile.cs" />
     <Compile Include="Assets\Scripts\MiniMapRegister.cs" />
     <Compile Include="Assets\Scripts\PlayerSimpleHealth.cs" />
+    <Compile Include="Assets\SelectionRing.cs" />
     <Compile Include="Assets\Scripts\AnimationManager.cs" />
     <Compile Include="Assets\Scripts\EnemyMelee.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
