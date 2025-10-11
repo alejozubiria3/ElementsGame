@@ -39,7 +39,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseColor:
-        m_Texture: {fileID: 2800000, guid: f937ff1c6fda86c42b68391fe46ebc3d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 29729548d251c0446ab68643b01b83ff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -67,7 +67,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FlowMap:
-        m_Texture: {fileID: 2800000, guid: f937ff1c6fda86c42b68391fe46ebc3d, type: 3}
+        m_Texture: {fileID: 2800000, guid: bc6e356d1e764734eb12dcd1da85dd5b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -95,7 +95,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Specular:
-        m_Texture: {fileID: 2800000, guid: 43f228811d96ba148b22ac5e3dbdde6b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7d903ba9074c9b44d87099ac9031c911, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_0e7bcf5e041b49899bf3f680a30371c9_Out_0_Texture2D:
@@ -139,7 +139,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Amount: 1
+    - _Amount: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
