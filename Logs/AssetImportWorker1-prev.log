@@ -15,7 +15,11 @@ C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
+<<<<<<< HEAD
 62048
+=======
+60374
+>>>>>>> origin/master
 -job-worker-count
 5
 -background-job-worker-count
@@ -59,12 +63,21 @@ C:/Users/Alain Deleau/Desktop/Da Vinci/(Final Pendiente) Inteligencia Artificial
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
+<<<<<<< HEAD
 Player connection [14896]  Target information:
 
 Player connection [14896]  * "[IP] 192.168.0.5 [Port] 0 [Flags] 2 [Guid] 1819049430 [EditorId] 1819049430 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
 Player connection [14896] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [14896] Host joined alternative multi-casting on [225.0.0.222:34997]...
+=======
+Player connection [8704]  Target information:
+
+Player connection [8704]  * "[IP] 192.168.0.5 [Port] 0 [Flags] 2 [Guid] 710002272 [EditorId] 710002272 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-NPM4VDT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [8704] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8704] Host joined alternative multi-casting on [225.0.0.222:34997]...
+>>>>>>> origin/master
 JobSystem: Creating JobQueue using job-worker-count value 5
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +89,11 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
+<<<<<<< HEAD
 Refreshing native plugins compatible for Editor in 5.36 ms, found 3 plugins.
+=======
+Refreshing native plugins compatible for Editor in 3.10 ms, found 3 plugins.
+>>>>>>> origin/master
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.44f1 (101c91f3a8fb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/Resources/UnitySubsystems
@@ -92,6 +109,7 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/MonoBleedingEdge/etc'
+<<<<<<< HEAD
 Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56836
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -103,11 +121,25 @@ Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.709 seconds
 Domain Reload Profiling: 1470ms
 	BeginReloadAssembly (226ms)
+=======
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56296
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006360 seconds.
+- Loaded All Assemblies, in  0.716 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.560 seconds
+Domain Reload Profiling: 1269ms
+	BeginReloadAssembly (239ms)
+>>>>>>> origin/master
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
+<<<<<<< HEAD
 	RebuildCommonClasses (71ms)
 	RebuildNativeTypeToScriptingClass (20ms)
 	initialDomainReloadingComplete (103ms)
@@ -129,6 +161,29 @@ Domain Reload Profiling: 1470ms
 			BeforeProcessingInitializeOnLoad (133ms)
 			ProcessInitializeOnLoadAttributes (316ms)
 			ProcessInitializeOnLoadMethodAttributes (115ms)
+=======
+	RebuildCommonClasses (66ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (88ms)
+	LoadAllAssembliesAndSetupDomain (296ms)
+		LoadAssemblies (230ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (291ms)
+			TypeCache.Refresh (289ms)
+				TypeCache.ScanAssembly (268ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (560ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (483ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (35ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (87ms)
+			ProcessInitializeOnLoadAttributes (261ms)
+			ProcessInitializeOnLoadMethodAttributes (93ms)
+>>>>>>> origin/master
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,8 +192,13 @@ Domain Reload Profiling: 1470ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
+<<<<<<< HEAD
 - Loaded All Assemblies, in  1.657 seconds
 Refreshing native plugins compatible for Editor in 2.06 ms, found 3 plugins.
+=======
+- Loaded All Assemblies, in  1.393 seconds
+Refreshing native plugins compatible for Editor in 2.19 ms, found 3 plugins.
+>>>>>>> origin/master
 Native extension for WindowsStandalone target not found
 Missing types referenced from component UniversalRenderPipelineGlobalSettings on game object UniversalRenderPipelineGlobalSettings:
 	UnityEngine.Rendering.LightmapSamplingSettings, Unity.RenderPipelines.Core.Runtime (1 object)
@@ -147,6 +207,7 @@ Missing types referenced from component UniversalRenderPipelineGlobalSettings on
 	UnityEngine.Rendering.Universal.ScreenSpaceAmbientOcclusionPersistentResources, Unity.RenderPipelines.Universal.Runtime (1 object)
 	UnityEngine.Rendering.VrsRenderPipelineRuntimeResources, Unity.RenderPipelines.Core.Runtime (1 object)
 Mono: successfully reloaded assembly
+<<<<<<< HEAD
 - Finished resetting the current domain, in  1.569 seconds
 Domain Reload Profiling: 3208ms
 	BeginReloadAssembly (305ms)
@@ -204,6 +265,81 @@ Received Import Request.
 Start importing Assets/MiniMapa.renderTexture using Guid(363a67eedce289b498fb628fe80c664a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1bab74e6fd0bca98c3b1b96fd95d3e2a') in 0.140067 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
+=======
+- Finished resetting the current domain, in  1.372 seconds
+Domain Reload Profiling: 2752ms
+	BeginReloadAssembly (280ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (10ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (68ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (76ms)
+	LoadAllAssembliesAndSetupDomain (932ms)
+		LoadAssemblies (661ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (441ms)
+			TypeCache.Refresh (316ms)
+				TypeCache.ScanAssembly (294ms)
+			BuildScriptInfoCaches (103ms)
+			ResolveRequiredComponents (18ms)
+	FinalizeReload (1373ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1109ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (242ms)
+			ProcessInitializeOnLoadAttributes (629ms)
+			ProcessInitializeOnLoadMethodAttributes (211ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 2.13 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 216 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6227 unused Assets / (4.6 MB). Loaded Objects now: 6930.
+Memory consumption went from 164.6 MB to 160.0 MB.
+Total: 12.617100 ms (FindLiveObjects: 0.962700 ms CreateObjectMapping: 0.802200 ms MarkObjects: 7.275700 ms  DeleteObjects: 3.574700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 64081.654453 seconds.
+  path: Assets/MiniMapa.renderTexture
+  artifactKey: Guid(363a67eedce289b498fb628fe80c664a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/MiniMapa.renderTexture using Guid(363a67eedce289b498fb628fe80c664a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1bab74e6fd0bca98c3b1b96fd95d3e2a') in 0.1183384 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/TerrainData_169d4d4f-65ed-4f71-a17b-7091c0f7c301.asset
+  artifactKey: Guid(e452841f76e6d49409e8a85e8e89c1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TerrainData_169d4d4f-65ed-4f71-a17b-7091c0f7c301.asset using Guid(e452841f76e6d49409e8a85e8e89c1bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23478aca8cbfe8b7bb709a30c1b04880') in 0.0079113 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/New Terrain 1.asset
+  artifactKey: Guid(f11525b75cf54ca4cb51cd51254cdfbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/New Terrain 1.asset using Guid(f11525b75cf54ca4cb51cd51254cdfbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '06ff78da1d90209b003e079db5b5d354') in 0.0082884 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 56.333730 seconds.
+  path: Assets/prefabs/EnemigoRango.prefab
+  artifactKey: Guid(6897608d85e9d7d49b4124bb74eaae06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/prefabs/EnemigoRango.prefab using Guid(6897608d85e9d7d49b4124bb74eaae06) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '166df1741438cbd51a384953d844e8ec') in 7.0566812 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 481
+
+>>>>>>> origin/master
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
